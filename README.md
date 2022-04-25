@@ -8,3 +8,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA<br>
 <br>
 EN FIN ALGUNA IDEA?
 holadvcvccvcvccvccvcvccv
+
+
+git checkout -b [nombre] = crear una branch
+git checkout [nombre] = ir a una rama
+git status = indica en que rama estas
+code . = abre visual studio code
