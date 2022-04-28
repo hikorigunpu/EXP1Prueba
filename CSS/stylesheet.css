@@ -1,0 +1,151 @@
+.btn-outline-success,.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited{
+    border-color: rgb(185, 79, 203);
+    color:rgb(185, 79, 203);
+    transition-duration: 2s;
+    animation-name: colorTransition;
+  }
+
+  @keyframes colorTransition 
+  {
+    from 
+    {
+    background-color: #FFFFFF;
+    }
+    to 
+    {
+    background-color: #FFFFFF;
+    }
+  }
+  body
+  {
+    height: 100%;
+  }
+  .box
+  {
+    height: 50%;
+    margin: auto;
+    
+  }
+  .box2
+  {
+    height: 50%;
+    margin: auto;
+  }
+  .imga
+  {
+    padding-left: 5%;
+    padding-top: 2%;
+  }
+
+  .ivv2
+      {
+        background-color: rgb(233, 233, 233);
+        border: 3px black solid;
+      }
+      .btn-outline-success,.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited{
+        border-color: rgb(185, 79, 203);
+        color:rgb(185, 79, 203);
+        transition-duration: 2s;
+        animation-name: colorTransition;
+      }
+
+      @keyframes colorTransition 
+      {
+        from 
+        {
+        background-color: #FFFFFF;
+        }
+        to 
+        {
+        background-color: #FFFFFF;
+        }
+      }
+      body
+      {
+        height: 100%;
+      }
+      .box
+      {
+        height: 50%;
+        margin: auto;
+        
+      }
+      .box2
+      {
+        height: 50%;
+        margin: auto;
+      }
+      .imga
+      {
+        padding-left: 5%;
+        padding-top: 2%;
+      }
+
+      .ivv2
+		  {
+			background-color: rgb(233, 233, 233);
+			border: 3px black solid;
+		  }    
+          body
+		  {
+			background-image: url(../img/bg-menu.png);
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center top;
+			background-attachment: fixed;
+		  }
+
+      .ivv
+		  {
+			background-color: rgb(233, 233, 233);
+			border: 5px black solid;
+		  }
+
+      .ivv2
+		  {
+			background-color: rgb(233, 233, 233);
+			border: 3px black solid;
+		  }
+
+      .titulos
+      {
+        width: 50%;
+        margin: auto;
+      }
+
+      .btn-outline-success,.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited
+      {
+        border-color: rgb(185, 79, 203);
+        color:rgb(185, 79, 203);
+        transition-duration: 2s;
+        animation-name: colorTransition;
+      }
+
+      .carousel-inner img {
+        width: 100%;
+        height: 100%;
+      }
+
+      body
+      {
+        height: 100%;
+      } 
+      body
+      {
+          background-image: url(../img/bg-login.jpg);
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center top;
+          background-attachment: fixed;
+      }
+
+      .ivv
+      {
+          background-color: rgb(233, 233, 233);
+          border: 5px black solid;
+      }
+
+      .btnbkn
+      {
+          border: 2px rgb(128, 167, 238) solid;
+      }
