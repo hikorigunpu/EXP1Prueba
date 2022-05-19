@@ -149,3 +149,10 @@
       {
           border: 2px rgb(128, 167, 238) solid;
       }
+
+      .pl
+      {
+        padding-left: 1px;
+        margin: auto;
+        display: inline;
+      }
