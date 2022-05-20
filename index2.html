@@ -48,7 +48,16 @@
       <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
         <!-- NavBar Login -->
-        <a href="login.html"><button type="button" id="dropdownMenu1" href="login.html" class="btn btn-outline-secondary">Login <span class="caret"></span></button></a>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Bienvenido, Usuario!
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Editar info. personal</a>
+            <a class="dropdown-item" href="#">Ver mis pedidos</a>
+            <a class="dropdown-item" href="#">Ayuda</a>
+          </div>
+        </div>
     </div>
   </nav>
   <!-- NavBar -->
