@@ -45,3 +45,9 @@ body
 .hrabout{
   border-color: grey;
 }
+
+.pimg{
+  border: 1px solid black;
+  border-width: 2%;
+  border-color: black;
+}
