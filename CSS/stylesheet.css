@@ -47,5 +47,10 @@ body
 }
 .border-10{
   border-style:solid;
-   border-width: 10px;
+  border-width: 10px;
   }
+.afooter ,.afooter:visited ,.afooter:hover ,.afooter:active{
+  text-decoration: none;
+  color: white;; 
+  padding-left: 1%;  
+}      
