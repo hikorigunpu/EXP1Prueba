@@ -11,7 +11,13 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="icon" type="image/x-icon" href="img/1f40c.png">
     
-   
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $("#enviar").click(function(){
+          alert("Su mensaje ha sido enviado. Se le dará respuesta lo antes posible por medio de correo electronico.");
+          });
+      }); 
+    </script>
 </head>
 
 <body class="d-flex flex-column min-vh-100">
@@ -77,9 +83,9 @@
             <div class="form-group">
                 <label for="comment">Mensaje:</label>
                 <textarea class="form-control" rows="5" id="comment"></textarea>
-              </div>
+            </div>
  
-            <button type="submit" class="btn btn-default btn-secondary">Enviar <span class="glyphicon glyphicon-envelope"></span></button > 
+            <a href="index2.html"><button type="button" class="btn btn-default btn-secondary" id="enviar">Enviar</button></a>
                  
         </form>
     </div>
