@@ -18,6 +18,16 @@
           });
       }); 
     </script>
+    <script>
+      $(document).ready(function () {
+          var max_length = 250;
+          $('textarea').keyup(function () {
+              var len = max_length - $(this).val().length;
+              $('.GFG').text(len);
+          });
+
+      });
+   </script>
 </head>
 
 <body class="d-flex flex-column min-vh-100">
@@ -80,10 +90,13 @@
                 <label for="name">Asunto:</label>
                 <input type="name" class="form-control" id="name" placeholder="Asunto del Comunicado" name="name">
             </div>
-            <div class="form-group">
-                <label for="comment">Mensaje:</label>
-                <textarea class="form-control" rows="5" id="comment"></textarea>
+            <div class="mui-textfield mui-textfield--float-label"> 
+              <label for="comment">Mensaje:</label> 
+              <textarea maxlength="250" rows="3" cols="145"></textarea>
+              <br>
+              <span class="GFG">250</span> 
             </div>
+            <br>
  
             <a href="index2.html"><button type="button" class="btn btn-default btn-secondary" id="enviar">Enviar</button></a>
                  
