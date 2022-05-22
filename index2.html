@@ -10,6 +10,36 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
   <link rel="stylesheet" href="CSS/stylesheet.css">
   <link rel="icon" type="image/x-icon" href="img/1f40c.png">
+
+  <script type="text/javascript">
+    // Initialize and add the map
+    function initMap() {
+      // The location of Uluru
+      const uluru = { lat: -33.43296915651802, lng: -70.61424544394865 };
+      // The map, centered at Uluru
+      const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 17,
+        center: uluru,
+      });
+      // The marker, positioned at Uluru
+      const marker = new google.maps.Marker({
+        position: uluru,
+        map: map,
+      });
+    }
+
+    window.initMap = initMap;
+  </script>
+  <style>
+      /* Set the size of the div element that contains the map */
+    #map {
+      height: 455px;
+      /* The height is 400 pixels */
+      width: 100%;
+      /* The width is the width of the web page */
+    }
+
+  </style>
 </head>
 
 <body class="d-flex flex-column min-vh-100">
@@ -29,23 +59,25 @@
         <li class="nav-item">
           <a class="nav-link" href="aboutus.html">Más Sobre Nosotros</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            Filtro Arte
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Carrito de Compra <img src="img/carrito.png" alt="carrito" width="25px"></a>
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Filtro Arte
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+        </ul>
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
         <!-- NavBar Login -->
         <div class="dropdown">
@@ -123,7 +155,54 @@
     </div>
   </div>
 
-  <br>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div id="map"></div>
+      </div>
+      <div class="col-md-6">
+        <div class="col-md-12">
+          <div class="card mb-4 box-shadow">
+            
+            <div class="card-body">
+              <h5>Quienes Somos</h5>
+              <p class="card-text">Grupo Cero es un espacio comercial, una editorial y una oficina de proyectos artísticos. Para esta galería nada es suficiente en la gestión de las artes visuales, y valora la cadena productiva que lleva a una galería a ser un mediador, consciente de que la corriente continua de acciones que exploran las expectativas de una sociedad, es indispensable para que un artista se mantenga en movimiento. Más que un espacio de exposición, AFA se erige como un catalizador del arte contemporáneo y una alternativa real a la rigidez del mercado del arte.</p>
+
+                    <li class="elementor-icon-list-item">
+                      <span class="elementor-icon-list-icon">
+              <i aria-hidden="true" class="icon icon-clock11"></i></span>
+                    <span class="elementor-icon-list-text">Lunes a Viernes: 15:00 – 20:00</span>
+                  </li>
+                <li class="elementor-icon-list-item">
+                      <span class="elementor-icon-list-icon">
+              <i aria-hidden="true" class="icon icon-clock11"></i></span>
+                    <span class="elementor-icon-list-text">Sábado: 11:00 - 18:00</span>
+                  </li>
+                <li class="elementor-icon-list-item">
+                      <span class="elementor-icon-list-icon">
+              <i aria-hidden="true" class="icon icon-clock11"></i></span>
+                    <span class="elementor-icon-list-text">Domingo: 11:00 - 13:00</span>
+                  </li>
+                <li class="elementor-icon-list-item">
+                      <span class="elementor-icon-list-icon">
+              <i aria-hidden="true" class="icon icon-map-marker1"></i></span>
+                    <span class="elementor-icon-list-text">Antonio Varas 666, Santiago, Chile</span>
+                  </li>
+              <br>
+              <div class="d-flex justify-content-between align-items-center">
+                <small class="text-muted">Grupo Cero </small>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    <br>
+    <br>
+    <hr class="hrabout">
+    <br>
+  </div>
 
   <div class="container">
     <div class="row">
@@ -205,6 +284,10 @@
         <p class="text-white-50 mb-0">Copyright © 2022 Grupo Cero</p>
     </div>
 </footer>
+  <script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
+  defer
+  ></script>
 </body>
 
 </html>
