@@ -26,6 +26,28 @@
   
         });
         
+        var UXAPP = UXAPP || {};
+
+        // paquete de validaciones
+        UXAPP.validador = {};
+
+        // método que inicia el validador con restriccion de caracteres
+        UXAPP.validador.init = function () {
+            // busca los elementos que contengan el atributo regexp definido
+            $("input[regexp]").each(function(){
+                // por cada elemento encontrado setea un listener del keypress
+                $(this).keypress(function(event){
+                    // extrae la cadena que define la expresión regular y creo un objeto RegExp 
+                    var regexp = new RegExp( "^" + $(this).attr("regexp") + "$" , "g");
+                    // evalua si el contenido del campo se ajusta al patrón REGEXP
+                    if ( ! regexp.test( $(this).val() + String.fromCharCode(event.which) ) )
+                        event.preventDefault();		
+                });
+            });	
+        }
+
+        // Arranca el validador al término de la carga del DOM
+        $(document).ready( UXAPP.validador.init );
 
     </script>  
 </head>
@@ -107,7 +129,7 @@
             </div>
             <div class="form-group">
                 <label for="name">Precio de la Obra:</label>
-                <input type="name" class="form-control" id="precio" placeholder="Ingrese Valor" name="name">
+                <input type="name" class="form-control" id="precio" placeholder="Ingrese Valor" name="name" regexp="[0-9]+(\.([0-9]*)){0,9}">
             </div>
             <p>Sube tu Archivo:</p>
             <div class="custom-file mb-3">
@@ -128,11 +150,7 @@
         <div class="container text-center py-3 py-lg-3">
             <ul class="list-inline">
                 <li class="list-inline-item"><a class="text-white" href="form.html">Contactenos</a></li>
-<<<<<<< Updated upstream
                 <li class="list-inline-item"><a class="text-white" href="aboutus.html">Mas Sobre Nostros</a></li>
-=======
-                <li class="list-inline-item"><a class="text-white" href="#">Mas Sobre Nosotros</a></li>
->>>>>>> Stashed changes
                 <li class="list-inline-item"><a class="text-white" href="https://youtu.be/mCdA4bJAGGk"> +56 9 1234 1324</a></li>
             </ul>
             <ul class="list-inline">
@@ -167,7 +185,7 @@
             followCursor: true,
         });
         tippy('#precio', {
-            content: 'el precio debe ser en CLP y sin puntos.',
+            content: 'el precio debe ser en CLP y con sepadaron de millares.',
             animation: 'fade',
             followCursor: true,
         });
