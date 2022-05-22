@@ -120,8 +120,7 @@
 
 						<div class="d-flex justify-content-center mt-3 login_container border-color">
 
-							<button type="submit" name="button" class="btn login_btn"
-								onClick="enviar('index2.html')">Iniciar sesion</button>
+							<button type="button" name="button" class="btn login_btn"><a class="abutton" href="index2.html">Iniciar sesion</a></button>
 
 						</div>
 					</form>
@@ -192,8 +191,20 @@
 			</div>
 		</div>
 	</footer>
-
-
+	<script src="https://unpkg.com/@popperjs/core@2"></script>
+	<script src="https://unpkg.com/tippy.js@6"></script>
+	<script>
+		tippy('#email', {
+			content: 'Ingrese su nombre email o nombre de usuario.',
+			animation: 'fade',
+			followCursor: true,
+		});
+		tippy('#password', {
+			content: 'Ingrese su contraseña.',
+			animation: 'fade',
+			followCursor: true,
+		});
+	</script>
 </body>
 
 </html>
