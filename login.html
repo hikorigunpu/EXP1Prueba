@@ -14,73 +14,68 @@
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 
 
-	<script src="https://www.google.com/recaptcha/api.js%22%3E"></script>
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 	<link rel="icon" type="image/x-icon" href="img/1f40c.png">
+</head>
 
-	<script>
-		function onSubmit(token) {
-			document.getElementById("demo-form").submit();
-		}
-	</script>
-	<script>
-		$(document).ready(function () {
-			$("#loginForm").validate({
-				rules: {
-					email: {
-						required: true
-					},
-					password: {
-						required: true
-					}
+<script>
+	$(document).ready(function () {
+		$("#loginForm").validate({
+			rules: {
+				email: {
+					required: true
 				},
-				messages: {
-					email: {
-						required: "especifique su email"
-					},
-					password: {
-						required: "especifique su contraseña"
-					}
-				},
-				submitHandler: function (form) { // for demo
-					alert('valid form');
-					return false;
+				password: {
+					required: true
 				}
+			},
+			messages: {
+				email: {
+					required: "especifique su email"
+				},
+				password: {
+					required: "especifique su contraseña"
+				}
+			},
+			submitHandler: function (form) { // for demo
+				alert('valid form');
+				return false;
+			}
+		});
+	});
+</script>
+<script type="text/javascript">
+	function enviar(pagina) {
+		document.loginForm.action = pagina;
+		document.loginForm.submit();
+
+	}
+</script>
+<script type="text/javascript">
+	var UXAPP = UXAPP || {};
+
+	// paquete de validaciones
+	UXAPP.validador = {};
+
+	// método que inicia el validador con restriccion de caracteres
+	UXAPP.validador.init = function () {
+		// busca los elementos que contengan el atributo regexp definido
+		$("input[regexp]").each(function () {
+			// por cada elemento encontrado setea un listener del keypress
+			$(this).keypress(function (event) {
+				// extrae la cadena que define la expresión regular y creo un objeto RegExp 
+				var regexp = new RegExp("^" + $(this).attr("regexp") + "$", "g");
+				// evalua si el contenido del campo se ajusta al patrón REGEXP
+				if (!regexp.test($(this).val() + String.fromCharCode(event.which)))
+					event.preventDefault();
 			});
 		});
-	</script>
-	<script type="text/javascript">
-		function enviar(pagina) {
-			document.loginForm.action = pagina;
-			document.loginForm.submit();
+	}
 
-		}
-	</script>
-	<script type="text/javascript">
-		var UXAPP = UXAPP || {};
-
-		// paquete de validaciones
-		UXAPP.validador = {};
-
-		// método que inicia el validador con restriccion de caracteres
-		UXAPP.validador.init = function () {
-			// busca los elementos que contengan el atributo regexp definido
-			$("input[regexp]").each(function () {
-				// por cada elemento encontrado setea un listener del keypress
-				$(this).keypress(function (event) {
-					// extrae la cadena que define la expresión regular y creo un objeto RegExp 
-					var regexp = new RegExp("^" + $(this).attr("regexp") + "$", "g");
-					// evalua si el contenido del campo se ajusta al patrón REGEXP
-					if (!regexp.test($(this).val() + String.fromCharCode(event.which)))
-						event.preventDefault();
-				});
-			});
-		}
-
-		// Arranca el validador al término de la carga del DOM
-		$(document).ready(UXAPP.validador.init);
-	</script>
-</head>
+	// Arranca el validador al término de la carga del DOM
+	$(document).ready(UXAPP.validador.init);
+</script>
 
 <body class="d-flex flex-column min-vh-100">
 	<br>
@@ -121,8 +116,7 @@
 									style="color: white;">Recuerdame la contraseña</label>
 							</div>
 						</div>
-						<button class="g-recaptcha" data-sitekey="6LfxVwsgAAAAAJC0j_Rie2KOM2-27FwBJC_3pXwd"
-							data-callback='onSubmit' data-action='submit'>Submit</button>
+						<div class="g-recaptcha" data-sitekey="6LfxVwsgAAAAAJC0j_Rie2KOM2-27FwBJC_3pXwd"></div>
 
 						<div class="d-flex justify-content-center mt-3 login_container border-color">
 
