@@ -80,20 +80,19 @@
         <form action="/action_page.php">
             <div class="form-group">
                 <label for="name">Nombre Completo:</label>
-                <input type="name" class="form-control" id="name" placeholder="Introduzca su Nombre" name="name">
+                <input type="name" class="form-control" id="nombre" placeholder="Introduzca su Nombre" name="name">
             </div>
             <div class="form-group">
                 <label for="email">Correo Electronico:</label>
-                <input type="email" class="form-control" id="email" placeholder="Introduzca su Correo" name="email">
+                <input type="email" class="form-control" id="correo" placeholder="Introduzca su Correo" name="email">
             </div>
             <div class="form-group">
                 <label for="name">Asunto:</label>
                 <input type="name" class="form-control" id="name" placeholder="Asunto del Comunicado" name="name">
             </div>
-            <div class="mui-textfield mui-textfield--float-label"> 
+            <div class="form-group"> 
               <label for="comment">Mensaje:</label> 
-              <textarea maxlength="250" rows="3" cols="145"></textarea>
-              <br>
+              <textarea class="form-control" maxlength="250" rows="3" cols="145"></textarea>
               <span class="GFG">250</span> 
             </div>
             <br>
@@ -124,6 +123,17 @@
           <p class="text-white-50 mb-0">Copyright © 2022 Grupo Cero</p>
       </div>
   </footer>
+
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <script src="https://unpkg.com/tippy.js@6"></script>
+  <script>
+    tippy('#nombre', {
+        content: 'Asegurese de ingresar su 1er nombre, 2do nombre, 1er apellido y 2do apellido',
+      });
+    tippy('#correo', {
+      content: 'Asegurese de que su correo tenga un "@"',
+    });
+  </script>
 </body>
 
 </html>
