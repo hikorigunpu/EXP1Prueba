@@ -19,6 +19,27 @@
 	<link rel="icon" type="image/x-icon" href="img/1f40c.png">
 </head>
 
+<script type="text/javascript">
+	document.addEventListener("DOMContentLoaded", function() {
+	document.getElementById("formulario").addEventListener('submit', validarFormulario); 
+	});
+
+	function validarFormulario(evento) {
+	evento.preventDefault();
+	var usuario = document.getElementById('usuario').value;
+	if(usuario.length == 0) {
+		alert('No has escrito nada en el usuario');
+		return;
+	}
+	var clave = document.getElementById('clave').value;
+	if (clave.length < 6) {
+		alert('La clave no es válida');
+		return;
+	}
+	this.submit();
+	}
+</script>
+
 <script>
 	$(document).ready(function () {
 		$("#loginForm").validate({
@@ -94,20 +115,20 @@
 				<br>
 				<br>
 				<div class="d-flex justify-content-center form_container">
-					<form id="loginForm" name="loginForm" action="login.html" method="post">
+					<form id="formulario" name="fvalida" action="index2.html" method="post">
 						<div class="input-group mb-3">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
 							</div>
-							<input type="email" name="email" class="form-control input_user" value=""
-								placeholder="nombre de usuario" id="email" regexp="[A-Z]{0,1}[a-z]{0,9}">
+							<input type="text" name="usuario" class="form-control input_user" value=""
+								placeholder="nombre de usuario" id="usuario" regexp="[A-Z]{0,1}[a-z]{0,9}">
 						</div>
 						<div class="input-group mb-2">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-key"></i></span>
 							</div>
-							<input type="password" name="password" class="form-control input_pass" value=""
-								placeholder="contraseña" id="password" regexp="[A-Z]{0,2}[a-z]{0,9}[1-9]{0,3}">
+							<input type="password" name="clave" class="form-control input_pass" value=""
+								placeholder="clave" id="clave" regexp="[A-Z]{0,2}[a-z]{0,9}[1-9]{0,3}">
 						</div>
 						<div class="form-group">
 							<div class="custom-control custom-checkbox">
@@ -120,7 +141,7 @@
 
 						<div class="d-flex justify-content-center mt-3 login_container border-color">
 
-							<button type="button" name="button" class="btn login_btn"><a class="abutton" href="index2.html">Iniciar sesion</a></button>
+							<button type="submit" name="button" value="entrar" class="btn login_btn">Iniciar sesion</button>
 
 						</div>
 					</form>
@@ -194,12 +215,12 @@
 	<script src="https://unpkg.com/@popperjs/core@2"></script>
 	<script src="https://unpkg.com/tippy.js@6"></script>
 	<script>
-		tippy('#email', {
+		tippy('#usuario', {
 			content: 'Ingrese su nombre email o nombre de usuario.',
 			animation: 'fade',
 			followCursor: true,
 		});
-		tippy('#password', {
+		tippy('#clave', {
 			content: 'Ingrese su contraseña.',
 			animation: 'fade',
 			followCursor: true,
