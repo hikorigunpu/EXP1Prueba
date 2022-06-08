@@ -87,8 +87,7 @@
                     <h1>Tus Obras</h1>
                 </div>
                 <div class="col-md-4 listadoboton">
-                    <a href="{% url 'form_obra' %}"><button class="btn btn-default btn-secondary">Nuevo
-                            Vehiculo</button></a>
+                    <button class="btn btn-default btn-secondary" ><a href="{% url 'form_obra' %}" class="afooter">Nuevo Vehiculo</a></button>
                 </div>
             </div>
         </div>
@@ -114,7 +113,7 @@
                     <td>{{v.descripcion}}</td>
                     <td>{{v.nombretecnica}}</td>
                     <td>{{v.precio}}</td>
-                    <td><img src="{{v.imagen}}" alt="foto de la obra"></td>
+                    <td><img src="{{v.imagen}}" alt="foto de la obra" class="fotolistado"></td>
                     <td><a href="{% url 'form_mod_obra' v.idobra %}">Modificar</a></td>
                     <td><a href="{% url 'form_del_obra' v.idobra %}">Eliminar</a></td>
                 </tr>
