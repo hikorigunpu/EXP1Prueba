@@ -87,7 +87,7 @@
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <a class="dropdown-item" href="{% url 'profile' %}">Editar info. personal</a>
-            <a class="dropdown-item" href="{% url 'obrasfrom' %}">Ingresar Nueva Obra</a>
+            <a class="dropdown-item" href="{% url 'obrasform' %}">Ver mis Obras</a>
             <a class="dropdown-item" href="#">Ver mis pedidos</a>
             <a class="dropdown-item" href="#">Ayuda</a>
           </div>
@@ -115,31 +115,33 @@
         </ol>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <a href="{% url 'galery1' %}"><img class="d-block w-100 rounded border" src="img/arte1c.jpg"
+            <a href="{% url 'galery1alt' %}"><img class="d-block w-100 rounded border" src="https://cdn.discordapp.com/attachments/967923311243841566/982088950917259344/arte1c.jpg"
                 alt="primera pantalla"></a>
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Hermosa Cesta de Mimbre</h5>
-                  <p>lLa cesta está forrada de tela suave, conveniente para desmontar y limpiar.
-                    Ideal para, libros, juguetes, monedas, álbums, ropa interior, ropa interior de bebé y otros pequeños
-                    artículos de utilidad, como tambien adecuado para la oficina, el hogar. se adapta a la mesa de su oficina, dormitorio,
-                    sala de estar, armario, studio, etc.</p>
-                </div>
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Hermosa Cesta de Mimbre</h5>
+              <p>La cesta está forrada de tela suave, conveniente para desmontar y limpiar.
+                Ideal para, libros, juguetes, monedas, álbums, ropa interior, ropa interior de bebé y otros pequeños
+                artículos de utilidad, como tambien adecuado para la oficina, el hogar. se adapta a la mesa de su oficina, dormitorio,
+                sala de estar, armario, studio, etc.</p>
+            </div>
           </div>
           <div class="carousel-item">
-            <a href="{% url 'galery2' %}"><img class="d-block w-100 rounded border" src="img/arte2c.jpg"
+            <a href="{% url 'galery2alt' %}"><img class="d-block w-100 rounded border" src="https://cdn.discordapp.com/attachments/967923311243841566/982088951273766952/arte2c.jpg"
                 alt="segunda pantalla"></a>
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Pintura en Lienzo "El Manaña"</h5>
-                  <p>Todas nuestras pinturas son 100% pintadas a mano por nuestros artistas, desde el boceto hasta el acabado, paso a paso. Este lienzo de paisaje urbano en blanco y negro es muy popular en el mercado de la decoración. </p>
-                </div>
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Pintura en Lienzo "El Manaña"</h5>
+              <p>Todas nuestras pinturas son 100% pintadas a mano por nuestros artistas, desde el boceto hasta el
+                acabado, paso a paso. Este lienzo de paisaje urbano en blanco y negro es muy popular en el mercado de la
+                decoración. </p>
+            </div>
           </div>
           <div class="carousel-item">
-            <a href="{% url 'home' %}"><img class="d-block w-100 rounded border" src="img/arte3c.jpg"
+            <a href="{% url 'galery3alt' %}"><img class="d-block w-100 rounded border" src="https://cdn.discordapp.com/attachments/967923311243841566/982088950577528862/arte3c.jpg"
                 alt="primera pantalla"></a>
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Grande Paula</h5>
-                  <p>among us</p>
-                </div>
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Grande Paula</h5>
+              <p>among us</p>
+            </div>
           </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -154,6 +156,7 @@
       <br>
       <br>
       <hr class="hrabout">
+      <br>
     </div>
   </div>
 

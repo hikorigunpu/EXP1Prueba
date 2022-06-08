@@ -128,10 +128,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Grupo Cero<span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="{% url 'index2' %}">Grupo Cero<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="aboutus.html">Más Sobre Nosotros</a>
+              <a class="nav-link" href="{% url 'aboutus' %}">Más Sobre Nosotros</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Carrito de Compra <img src="img/carrito.png" alt="carrito" width="25px"></a>
@@ -160,8 +160,8 @@
                 Bienvenido, Usuario!
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="profile.html">Editar info. personal</a>
-                <a class="dropdown-item" href="obrasForm.html">Ingresar Nueva Obra</a>
+                <a class="dropdown-item" href="{% url 'profile' %}>Editar info. personal</a>
+                <a class="dropdown-item" href="{% url 'obrasform' %}">Ingresar Nueva Obra</a>
                 <a class="dropdown-item" href="#">Ver mis pedidos</a>
                 <a class="dropdown-item" href="#">Ayuda</a>
               </div>
@@ -171,7 +171,7 @@
     <!-- NavBar -->
   
 
-    <div class="container"> <a class="navbar-brand" href="index.html"><img src=""></a>
+    <div class="container"> <a class="navbar-brand" href="{% url 'index2' %}"><img src=""></a>
         <h1>Ingrese su Obra</h1> 
         <br>
         <h4>Ingrese su datos y especificaciones de la obra a continuación.</h4>
@@ -203,7 +203,7 @@
                 <label class="custom-file-label" for="customFile">(PNG o JPG)</label>
             </div>
             <div class="mt-3">
-                <a href="index2.html"><button type="button" class="btn btn-secondary" id="enviar">Enviar</button></a>
+                <a href="{% url 'index2' %}"><button type="button" class="btn btn-secondary" id="enviar">Enviar</button></a>
             </div>
             
               
@@ -215,8 +215,8 @@
     <footer class="text-white bg-dark mt-auto">
         <div class="container text-center py-3 py-lg-3">
             <ul class="list-inline">
-                <li class="list-inline-item"><a class="text-white" href="form.html">Contáctenos</a></li>
-                <li class="list-inline-item"><a class="text-white" href="aboutus.html">Más Sobre Nosotros</a></li>
+                <li class="list-inline-item"><a class="text-white" href="{% url 'form' %}">Contáctenos</a></li>
+                <li class="list-inline-item"><a class="text-white" href="{% url 'aboutus' %}">Más Sobre Nosotros</a></li>
                 <li class="list-inline-item"><a class="text-white" href="https://youtu.be/mCdA4bJAGGk"> +56 9 1234 1324</a></li>
             </ul>
             <ul class="list-inline">

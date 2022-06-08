@@ -83,7 +83,7 @@
 
 <body class="d-flex flex-column min-vh-100">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="index2.html"><img src=""><img src="img/1f40c.png" alt="FotoLogo" width="50px"></a>
+        <a class="navbar-brand" href="{% url 'index2' %}"><img src=""><img src="img/1f40c.png" alt="FotoLogo" width="50px"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -125,8 +125,8 @@
                 Bienvenido, Usuario!
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="profile.html">Editar info. personal</a>
-                <a class="dropdown-item" href="obrasForm.html">Ingresar Nueva Obra</a>
+                <a class="dropdown-item" href="{% url 'profile' %}">Editar info. personal</a>
+                <a class="dropdown-item" href="{% url 'obrasform' %}">Ingresar Nueva Obra</a>
                 <a class="dropdown-item" href="#">Ver mis pedidos</a>
                 <a class="dropdown-item" href="#">Ayuda</a>
               </div>
@@ -135,7 +135,7 @@
     </nav>
   
 
-    <div class="container"> <a class="navbar-brand" href="index.html"><img src=""></a>
+    <div class="container"> <a class="navbar-brand" href="{% url 'home' %}"><img src=""></a>
         <h1>Contactenos</h1>
         <br>
         <h4>Rellene la siguiente información para poder comunicarnos con usted.</h4>
@@ -165,7 +165,7 @@
             </div>
             <br>
  
-            <a href="index2.html"><button type="submit" class="btn btn-default btn-secondary submit" id="enviar" value="submit">Enviar</button></a>                 
+            <a href="{% url 'index' %}"><button type="submit" class="btn btn-default btn-secondary submit" id="enviar" value="submit">Enviar</button></a>                 
         </form>
     </div>
     <br>

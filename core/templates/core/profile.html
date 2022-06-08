@@ -14,7 +14,7 @@
 
 <body class="d-flex flex-column min-vh-100">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="index2.html"><img src=""><img src="img/1f40c.png" alt="FotoLogo" width="50px"></a>
+        <a class="navbar-brand" href="{% url 'index2' %}"><img src=""><img src="img/1f40c.png" alt="FotoLogo" width="50px"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -26,7 +26,7 @@
                     <a class="nav-link" href="#">Grupo Cero<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="aboutus.html">Más Sobre Nosotros</a>
+                    <a class="nav-link" href="{% url 'aboutus' %}">Más Sobre Nosotros</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Carrito de Compra <img src="img/carrito.png" alt="carrito"
@@ -56,8 +56,8 @@
                         Bienvenido, Usuario!
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="profile.html">Editar info. personal</a>
-                        <a class="dropdown-item" href="obrasForm.html">Ingresar Nueva Obra</a>
+                        <a class="dropdown-item" href="{% url 'profile' %}">Editar info. personal</a>
+                        <a class="dropdown-item" href="{% url 'obrasform' %}">Ingresar Nueva Obra</a>
                         <a class="dropdown-item" href="#">Ver mis pedidos</a>
                         <a class="dropdown-item" href="#">Ayuda</a>
                     </div>
@@ -165,8 +165,8 @@
     <footer class="text-white bg-dark mt-auto">
         <div class="container text-center py-3 py-lg-3">
             <ul class="list-inline">
-                <li class="list-inline-item"><a class="text-white" href="form.html">Contáctenos</a></li>
-                <li class="list-inline-item"><a class="text-white" href="aboutus.html">Más Sobre Nosotros</a></li>
+                <li class="list-inline-item"><a class="text-white" href="{% url 'form' %}">Contáctenos</a></li>
+                <li class="list-inline-item"><a class="text-white" href="{% url 'aboutus' %}">Más Sobre Nosotros</a></li>
                 <li class="list-inline-item"><a class="text-white" href="https://youtu.be/mCdA4bJAGGk"> +56 9 1234
                         1324</a></li>
             </ul>

@@ -1,48 +1,51 @@
 from django.shortcuts import render, redirect
-from .models import Vehiculo
-from .forms import VehiculoForm
+from .models import obra
+from .forms import obraform
 # Create your views here.
 
-def home(request):
-    lista = Vehiculo.objects.all()
+def listadouser(request):
+    lista = obra.objects.all()
     contexto = {
-        'vehiculos': lista,
+        'obra': lista,
     }
-    return render(request, 'core/index.html', contexto)
+    return render(request, 'core/listadouser.html', contexto)
 
-def form_vehiculo(request):
+def form_obra(request):
     contexto = { 
-        'form': VehiculoForm(),
+        'form': obraform(),
         }
     if request.method=='POST':
-        formulario=VehiculoForm(request.POST)
+        formulario=obraform(request.POST)
         if formulario.is_valid():
             formulario.save()
             contexto['mensaje']='Datos guardados correctamente'
-    return render(request, 'core/form-vehiculo.html', contexto)
+    return render(request, 'core/form-obra.html', contexto)
 
-def form_mod_vehiculo(request, id):
-    vehiculo = Vehiculo.objects.get(patente=id)
+def form_mod_obra(request, id):
+    obra1 = obra.objects.get(idobra=id)
     contexto = { 
-        'form': VehiculoForm(instance=vehiculo),
+        'form': obraform(instance=obra1),
         }
     if request.method=='POST':
-        formulario=VehiculoForm(data=request.POST, instance=vehiculo)
+        formulario=obraform(data=request.POST, instance=obra1)
         if formulario.is_valid():
             formulario.save()
             contexto['mensaje']='Datos modificados correctamente'
-    return render(request, 'core/form-mod-vehiculo.html', contexto)
+    return render(request, 'core/form-mod-obra.html', contexto)
 
-def form_del_vehiculo(request, id):
-    vehiculo = Vehiculo.objects.get(patente=id)
-    vehiculo.delete()
-    return redirect(to="home")
+def form_del_obra(request, id):
+    obra1 = obra.objects.get(idobra=id)
+    obra1.delete()
+    return redirect(to="listadouser")
 
 def login(request):
     return render(request, 'core/login.html')
 
 def index2(request):
     return render(request, 'core/index2.html')
+
+def home(request):
+    return render(request, 'core/index.html')
 
 def loginnewuser(request):
     return render(request, 'core/loginnewuser.html')

@@ -1,9 +1,9 @@
 from django import forms
 from django.forms import ModelForm
-from .models import Vehiculo
+from .models import obra
 
-class VehiculoForm(ModelForm):
+class obraform(ModelForm):
     class Meta:
-        model = Vehiculo
-        fields = ['patente','marca','modelo','categoria']
+        model = obra
+        fields = ['idobra','autor','nombre','descripcion','nombretecnica','precio','imagen']
         

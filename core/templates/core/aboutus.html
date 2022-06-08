@@ -12,6 +12,43 @@
     <link rel="stylesheet" href="CSS/stylesheet.css">
     <title>Sobre Nosotros</title>
     <link rel="icon" type="image/x-icon" href="img/1f40c.png">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script> 
+        $(document).ready(function(){
+          $("#flip").click(function(){
+            $("#panel").slideToggle("slow");
+          });
+        });
+    </script>
+    <script> 
+        $(document).ready(function(){
+            $("#flip2").click(function(){
+            $("#panel2").slideToggle("slow");
+            });
+        });
+    </script>
+    <script> 
+        $(document).ready(function(){
+            $("#flip3").click(function(){
+            $("#panel3").slideToggle("slow");
+            });
+        });
+    </script>
+    <style> 
+        #panel, #flip, #panel2, #flip2, #panel3, #flip3 {
+          padding: 20px;
+          text-align: center;
+          background-color: rgba(184, 182, 182, 0.75);
+          border: solid 1px rgba(184, 182, 182, 0.75);
+        }
+        
+        #panel, #panel2, #panel3 {
+          padding: 50px;
+          display: none;
+        }
+    </style>
+    
 </head>
 
 <body class="d-flex flex-column min-vh-100">
@@ -29,7 +66,7 @@
               <a class="nav-link" href="#">Grupo Cero<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="aboutus.html">Más Sobre Nosotros</a>
+              <a class="nav-link" href="{% url 'aboutus' %}">Más Sobre Nosotros</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Carrito de Compra <img src="img/carrito.png" alt="carrito" width="25px"></a>
@@ -58,51 +95,185 @@
                 Bienvenido, Usuario!
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="profile.html">Editar info. personal</a>
-                <a class="dropdown-item" href="obrasForm.html">Ingresar Nueva Obra</a>
+                <a class="dropdown-item" href="{% url 'profile' %}">Editar info. personal</a>
+                <a class="dropdown-item" href="{% url 'obrasform' %}">Ingresar Nueva Obra</a>
                 <a class="dropdown-item" href="#">Ver mis pedidos</a>
                 <a class="dropdown-item" href="#">Ayuda</a>
               </div>
             </div>
         </div>
-      </nav>
+    </nav>
     <br>
     <br>
     <br>
-    <div class="container border border-dark rounded" style="background-color: #383c44;">
-        <h1 class="h1aboutus">Sobre Nosotros</h1>
-        <br>
-        <br>
-        <h2 class="h1aboutus">Ideales</h2>
-        <hr class="hrabout">
-        <p class="h1aboutus">Grupo Cero es un espacio comercial, una editorial y una oficina de proyectos artísticos. Para esta galería nada es suficiente en la gestión de las artes visuales, y valora la cadena productiva que lleva a una galería a ser un mediador, consciente de que la corriente continua de acciones que exploran las expectativas de una sociedad, es indispensable para que un artista se mantenga en movimiento. Más que un espacio de exposición, AFA se erige como un catalizador del arte contemporáneo y una alternativa real a la rigidez del mercado del arte.</p>
-        <br>
-        <h2 class="h1aboutus">Miembros</h2>
-        <hr class="hrabout">
-        <div>
-            <ul>
-                <li><img class="rounded pb-1 border imgmember2" src="img/amogu.png" alt="amogu"></li>
-                <li><img class="rounded pb-1 border imgmember1" src="img/metal-gear-rising-revengeance.jpg"
-                        alt="raiden"> </li>
-                <li><img class="rounded pb-1 border imgmember1" src="img/metal-gear-rising-revengeance.jpg"
-                        alt="raiden"></li>
-            </ul>
-        </div>
 
+        <div class="container border border-dark rounded vh-70" style="background-color: #383c44;">
         <br>
-        <h2 class="h1aboutus">Stuff</h2>
+        <h1 class="h1aboutus text-center" style="color: #ffff">Sobre Nosotros</h1>
+        <br>
         <hr class="hrabout">
-        <p class="h1aboutus">En Grupo Cero hemos pasado por muchas experiencias en el campo del arte, hemos tenido contacto con un sin numero de artistas del pais con los cuales logramos llegar a acuerdos para que sus obras puedan ser viralizadas por el internet y que tambien tengan un espacio simple y seguro para que estas sean puestas a la venta. Llevamos muchos años esté campo, lo suficiente para poder decir que hemos podido integrar varias culturas artisticas como compañia, lo cual no seria posible si no existieran todos esos pequeños artistas con los cuales nos desenvolvemos.
+        <br>
+        <div class="rounded" id="flip" style="color: #ffff">
+            <p class="h4">"Quiénes Somos"</p>
+        </div>
+        <br>
+        <div class="rounded" id="panel" style="color: #ffff">Somos un grupo La página “Quiénes somos” tiene por objetivo contar la historia de tu marca y quiénes son sus protagonistas. Así, podés lograr acercarte a tus clientes e inspirar la confianza que necesitan para concretar su compra.</div>
+        <br>
+        <hr class="hrabout">
+        <br>
+        <div class="rounded" id="flip2" style="color: #ffff">
+            <p class="h4">Nuestro Objetivo</p>
+        </div>
+        <br>
+        <div class="rounded" id="panel2" style="color: #ffff">La página “Quiénes somos” tiene por objetivo contar la historia de tu marca y quiénes son sus protagonistas. Así, podés lograr acercarte a tus clientes e inspirar la confianza que necesitan para concretar su compra.</div>
+        <br>
+        <hr class="hrabout">
+        <br>
+        <div class="rounded" id="flip3" style="color: #ffff">
+            <p class="h4">Integrantes</p>
+        </div>
+        <br>
+        <div class="rounded" id="panel3" style="color: #ffff">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card mb-4 box-shadow">
+                          <img class="card-img-top" style="height: 225px; width: 100%; display: block;"
+                            src="img/metal-gear-rising-revengeance.jpg">
+                          <div class="card-body">
+                            <p class="card-text" style="color: black">Juan Valenzuela</p>
+                            <hr class="hrabout">
+                            <p class="card-text" style="color: black">Comenzamos siendo un taller artesanal hace muchos años, para luego en el 2007
+                              transformarnos lentamente en comercializadora de productos de nuestros amigos</p>
+                            <hr class="hrabout">
+                            <br>
+                            <p class="card-text" style="color: rgba(33, 33, 33, 0.661)">Email: ashdah@gmail.com</p>
+                            <br>
+                            <br>
+                            <div class="d-flex justify-content-between align-items-center">
+                              <small class="text-muted">Grupo Cero </small>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 box-shadow">
+                          <img class="card-img-top" style="height: 225px; width: 100%; display: block;"
+                            src="img/amogu.png"
+                            data-holder-rendered="true">
+                          <div class="card-body">
+                            <p class="card-text" style="color: black">Vicente Corrales</p>
+                            <hr class="hrabout">
+                            <p class="card-text" style="color: black">Nos dedicamos a construir experiencias creativas con nuestros clientes para el
+                              desarrollo de su potencial artístico mediante un portafolio innovador de productos.</p>
+                            <hr class="hrabout">
+                            <br>
+                            <p class="card-text" style="color: rgba(33, 33, 33, 0.661)">Email: ashdah@gmail.com</p>
+                            <br>
+                            <br>
+                            <div class="d-flex justify-content-between align-items-center">
+                              <small class="text-muted">Grupo Cero</small>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 box-shadow">
+                          <img class="card-img-top" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;"
+                            src="img/metal-gear-rising-revengeance.jpg" data-holder-rendered="true">
+                          <div class="card-body">
+                            <p class="card-text" style="color: black">Alonso Arellano</p>
+                            <hr class="hrabout">
+                            <p class="card-text" style="color: black">Alcanzar un mayor reconocimiento de marca como las tiendas de categoría más agradables
+                              y especializadas en arte, ampliando la cobertura a nivel nacional.</p>
+                            <hr class="hrabout">
+                            <br>
+                            <p class="card-text" style="color: rgba(33, 33, 33, 0.661)">Email: ashdah@gmail.com</p>
+                            <br>
+                            <br>
+                            <div class="d-flex justify-content-between align-items-center">
+                              <small class="text-muted">Grupo Cero</small>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 box-shadow">
+                          <img class="card-img-top" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;"
+                            src="img/amogu.png" data-holder-rendered="true">
+                          <div class="card-body">
+                            <p class="card-text" style="color: black">Paula Arancibia</p>
+                            <hr class="hrabout">
+                            <p class="card-text" style="color: black">Alcanzar un mayor reconocimiento de marca como las tiendas de categoría más agradables
+                              y especializadas en arte, ampliando la cobertura a nivel nacional.</p>
+                            <hr class="hrabout">
+                            <br>
+                            <p class="card-text" style="color: rgba(33, 33, 33, 0.661)">Email: ashdah@gmail.com</p>
+                            <br>
+                            <br>
+                            <div class="d-flex justify-content-between align-items-center">
+                              <small class="text-muted">Grupo Cero</small>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 box-shadow">
+                          <img class="card-img-top" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;"
+                            src="img/metal-gear-rising-revengeance.jpg" data-holder-rendered="true">
+                          <div class="card-body">
+                            <p class="card-text" style="color: black">Martin Carreño</p>
+                            <hr class="hrabout">
+                            <p class="card-text" style="color: black">Alcanzar un mayor reconocimiento de marca como las tiendas de categoría más agradables
+                              y especializadas en arte, ampliando la cobertura a nivel nacional.</p>
+                            <hr class="hrabout">
+                            <br>
+                            <p class="card-text" style="color: rgba(33, 33, 33, 0.661)">Email: ashdah@gmail.com</p>
+                            <br>
+                            <br>
+                            <div class="d-flex justify-content-between align-items-center">
+                              <small class="text-muted">Grupo Cero</small>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 box-shadow">
+                          <img class="card-img-top" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;"
+                            src="img/amogu.png" data-holder-rendered="true">
+                          <div class="card-body">
+                            <p class="card-text" style="color: black">Don Snail</p>
+                            <hr class="hrabout">
+                            <p class="card-text" style="color: black">Alcanzar un mayor reconocimiento de marca como las tiendas de categoría más agradables
+                              y especializadas en arte, ampliando la cobertura a nivel nacional.</p>
+                            <hr class="hrabout">
+                            <br>
+                            <p class="card-text" style="color: rgba(33, 33, 33, 0.661)">Email: ashdah@gmail.com</p>
+                            <br>
+                            <br>
+                            <div class="d-flex justify-content-between align-items-center">
+                              <small class="text-muted">Grupo Cero</small>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div> 
+            </div>   
+        </div>
+        <br>
+        <br>
 
     </div>
     <br>
     <br>
     <br>
+
+    
     <footer class="text-white bg-dark mt-auto">
         <div class="container text-center py-3 py-lg-3">
             <ul class="list-inline">
-                <li class="list-inline-item"><a class="text-white" href="form.html">Contáctenos</a></li>
-                <li class="list-inline-item"><a class="text-white" href="aboutus.html">Más Sobre Nosotros</a></li>
+                <li class="list-inline-item"><a class="text-white" href="{% url 'form' %}">Contáctenos</a></li>
+                <li class="list-inline-item"><a class="text-white" href="{% url 'aboutus' %}">Más Sobre Nosotros</a></li>
                 <li class="list-inline-item"><a class="text-white" href="https://youtu.be/mCdA4bJAGGk"> +56 9 1234
                         1324</a></li>
             </ul>

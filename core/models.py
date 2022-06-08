@@ -2,21 +2,24 @@ from django.db import models
 
 # Create your models here.
 
-class Categoria(models.Model):
-  idCategoria = models.IntegerField(primary_key = True, verbose_name = 'Id de categoria')
-  nombreCategoria = models.CharField(max_length = 50, verbose_name = 'Nombre de la cetgoria')
+class tecnica(models.Model):
+  idtecnica = models.IntegerField(primary_key = True, verbose_name = 'Id de tecnica')
+  nombretecnica = models.CharField(max_length = 50, verbose_name = 'Nombre del tecnica')
 
   def __str__(self):
-    return self.nombreCategoria
+    return self.nombretecnica
 
 # Modelo para vehiculo
-class Vehiculo(models.Model):
-  patente = models.CharField(max_length = 6, primary_key = True, verbose_name = 'Patente')
-  marca = models.CharField(max_length = 20, verbose_name = 'Marca vehiculo')
-  modelo = models.CharField (max_length = 20, null = True, blank = True, verbose_name = 'Modelo')
-  categoria = models.ForeignKey(Categoria, on_delete = models.CASCADE)
+class obra(models.Model):
+  idobra = models.IntegerField(primary_key = True, verbose_name = 'Id de obra')
+  autor = models.CharField(max_length = 6, verbose_name = 'autor')
+  nombre = models.CharField(max_length = 20, verbose_name = 'nombre obra')
+  descripcion = models.CharField (max_length = 20, null = True, blank = True, verbose_name = 'descripcion obra')
+  nombretecnica = models.ForeignKey(tecnica, on_delete = models.CASCADE)
+  precio = models.CharField (max_length = 20, null = True, blank = True, verbose_name = 'precio de la obra')
+  imagen = models.CharField (max_length = 100, null = True, blank = True, verbose_name = 'imagen de la obra')
 
   def __str__(self):
-    return self.patente
+    return self.idobra
 
     
