@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import obra
 from .forms import obraform
+from django.views.generic import CreateView
 # Create your views here.
 
 def listadouser(request):
@@ -20,6 +21,11 @@ def form_obra(request):
             formulario.save()
             contexto['mensaje']='Datos guardados correctamente'
     return render(request, 'core/form-obra.html', contexto)
+
+
+class ObraCreateView(CreateView):
+    model = obra
+    fields = ['idobra','autor','nombre','descripcion','nombretecnica','precio','imagen']
 
 def form_mod_obra(request, id):
     obra1 = obra.objects.get(idobra=id)
