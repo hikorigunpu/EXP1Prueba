@@ -45,7 +45,9 @@
 <body class="d-flex flex-column min-vh-100">
   <!-- NavBar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="{% url 'index2' %}"><img src=""><img src="img/1f40c.png" alt="FotoLogo" width="50px"></a>
+    <a class="navbar-brand" href="{% url 'index2' %}"><img
+        src="https://cdn.discordapp.com/attachments/967923311243841566/983892483631120434/unknown.png" alt="FotoLogo"
+        width="50px"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -60,7 +62,9 @@
           <a class="nav-link" href="{% url 'aboutus' %}">Más Sobre Nosotros</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Carrito de Compra <img src="img/carrito.png" alt="carrito" width="25px"></a>
+          <a class="nav-link" href="#">Carrito de Compra <img
+              src="https://cdn.discordapp.com/attachments/967923311243841566/982092126886195280/pngwing.com.png"
+              alt="carrito" width="25px"></a>
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
@@ -78,6 +82,7 @@
             </div>
           </li>
         </ul>
+      
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
         <!-- NavBar Login -->
         <div class="dropdown">
@@ -87,11 +92,13 @@
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <a class="dropdown-item" href="{% url 'profile' %}">Editar info. personal</a>
-            <a class="dropdown-item" href="{% url 'obrasform' %}">Ver mis Obras</a>
+            <a class="dropdown-item" href="{% url 'form_obra' %}">Agregar Nueva Obra</a>
+            <a class="dropdown-item" href="{% url 'listadouser' %}">Ver mis Obras</a>
             <a class="dropdown-item" href="#">Ver mis pedidos</a>
             <a class="dropdown-item" href="#">Ayuda</a>
           </div>
         </div>
+      </form>
     </div>
   </nav>
   <!-- NavBar -->
@@ -107,11 +114,18 @@
       <hr class="hrabout">
       <br>
       <br>
+      
       <div id="carouselExampleIndicators" class="carousel slide rounded border-dark" data-ride="carousel">
         <ol class="carousel-indicators">
           <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="7"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="8"></li>
         </ol>
         <div class="carousel-inner">
           <div class="carousel-item active">
@@ -143,6 +157,16 @@
               <p>among us</p>
             </div>
           </div>
+          {% for v in obra %}
+          <div class="carousel-item">
+            <a href="{% url 'galery3alt' %}"><img class="d-block w-100 rounded border" src="{{v.imagen}}"
+                alt="primera pantalla" height="698px" width="698px"></a>
+            <div class="carousel-caption d-none d-md-block">
+              <h5>{{v.nombre}}</h5>
+              <p>{{v.descripcion}}</p>
+            </div>
+          </div>
+          {% endfor %}
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="false"></span>

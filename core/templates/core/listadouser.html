@@ -14,16 +14,17 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
-    
+
     <link rel="stylesheet" href="CSS/stylesheet.css">
-    <link rel="icon" type="image/x-icon" href="https://cdn.discordapp.com/attachments/967923311243841566/983892483631120434/unknown.png">
+    <link rel="icon" type="image/x-icon"
+        href="https://cdn.discordapp.com/attachments/967923311243841566/983892483631120434/unknown.png">
     <title>listado de obras</title>
 </head>
 
 <body>
     <!-- NavBar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="{% url 'index2' %}"><img src=""><img
+        <a class="navbar-brand" href="{% url 'index2' %}"><img
                 src="https://cdn.discordapp.com/attachments/967923311243841566/983892483631120434/unknown.png"
                 alt="FotoLogo" width="50px"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -60,6 +61,7 @@
                         </div>
                     </li>
                 </ul>
+
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                 <!-- NavBar Login -->
                 <div class="dropdown">
@@ -69,11 +71,13 @@
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <a class="dropdown-item" href="{% url 'profile' %}">Editar info. personal</a>
-                        <a class="dropdown-item" href="{% url 'obrasform' %}">Ver mis Obras</a>
+                        <a class="dropdown-item" href="{% url 'form_obra' %}">Agregar Nueva Obra</a>
+                        <a class="dropdown-item" href="{% url 'listadouser' %}">Ver mis Obras</a>
                         <a class="dropdown-item" href="#">Ver mis pedidos</a>
                         <a class="dropdown-item" href="#">Ayuda</a>
                     </div>
                 </div>
+            </form>
         </div>
     </nav>
     <!-- NavBar -->
@@ -81,16 +85,15 @@
     <br>
 
     <div class="container">
-        <div class="row">
-            <div class="row">
-                <div class="col-md-8">
-                    <h1>Tus Obras</h1>
-                </div>
-                <div class="col-md-4 listadoboton">
-                    <button class="btn btn-default btn-secondary" ><a href="{% url 'form_obra' %}" class="afooter">Nuevo Vehiculo</a></button>
-                </div>
-            </div>
+
+        <hr>
+        <div class="title text-center">
+            <hr>
+            <h1>Tus Obras</h1>
+            <hr>
         </div>
+        <hr>
+
         <br>
         <br>
         <div class="row">
@@ -113,9 +116,10 @@
                     <td>{{v.descripcion}}</td>
                     <td>{{v.nombretecnica}}</td>
                     <td>{{v.precio}}</td>
-                    <td><img src="{{v.imagen}}" alt="foto de la obra" class="fotolistado"></td>
-                    <td><a href="{% url 'form_mod_obra' v.idobra %}">Modificar</a></td>
-                    <td><a href="{% url 'form_del_obra' v.idobra %}">Eliminar</a></td>
+                    <td><img src="{{v.imagen}}" alt="foto de la obra" class="fotolistado" width="150px" height="150px">
+                    </td>
+                    <td><button class="btn"><a href="{% url 'form_mod_obra' v.idobra %}">Modificar</a></button></td>
+                    <td><button class="btn"><a href="{% url 'form_del_obra' v.idobra %}">Eliminar</a></button></td>
                 </tr>
                 {% endfor %}
             </table>

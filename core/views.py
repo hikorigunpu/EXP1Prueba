@@ -48,7 +48,11 @@ def login(request):
     return render(request, 'core/login.html')
 
 def index2(request):
-    return render(request, 'core/index2.html')
+    lista = obra.objects.all()
+    contexto = {
+        'obra': lista,
+    }
+    return render(request, 'core/index2.html', contexto)
 
 def home(request):
     return render(request, 'core/index.html')
