@@ -7,9 +7,9 @@
 
     <!-- Enlazando el CSS de Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="icon" type="image/x-icon" href="img/1f40c.png">
-    <!-- CSS stylesheet-->
+
     <link rel="stylesheet" href="CSS/stylesheet.css">
+    <link rel="icon" type="image/x-icon" href="img/1f40c.png">
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -57,23 +57,25 @@
     <div class="container">
       <div class="row">
         <div class="col-md-4">
-          <img class="d-block w-100" src="https://cdn.discordapp.com/attachments/967923311243841566/982088951273766952/arte2c.jpg" alt="producto">
+          <img class="d-block w-100" src="{{v.imagen}}" alt="producto">
         </div>
         <div class="col-md-8">
           <div class="card mb-4 box-shadow">
-            <!-- creando el card -->
+            
+            <!-- creando el card sillita musical-->
             <div class="card-body">
-              <h2>El Mañana</h2>
+              <h2>{{v.nombre}}</h2>
               <br>
-              <p class="card-text">Por: Po Leron Cito</p>
+              <br>
+              <p class="card-text">{{v.artista}}</p>
               <!-- nombre del autor de la obra-->
               <br>
               <h4>HISTORIA</h4>
-              <p class="card-text">Tengo en esta historia algo que confesar, Ya entendí muy bien qué fue lo que pasó, Y aunque duela tanto, tengo que aceptar, Que tú no eres la mala, que el malo soy yo.</p>
+              <p class="card-text">{{v.descripcion}}</p>
               <h4>DESCRIPCION</h4>
-              <p class="card-text">Tengo en esta historia algo que confesar, Ya entendí muy bien qué fue lo que pasó, Y aunque duela tanto, tengo que aceptar, Que tú no eres la mala, que el malo soy yo.</p>
+              <p class="card-text">{{v.descripcion}}</p>
               <br>
-              <h4>PRECIO: $2500000</h4>
+              <h4>{{v.precio}}</h4>
               <br>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="container">
@@ -83,6 +85,7 @@
               </div>
             </div>
             <!-- fin del card-->
+            
           </div>
         </div>
       </div>

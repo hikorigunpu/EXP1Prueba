@@ -159,7 +159,7 @@
           </div>
           {% for v in obra %}
           <div class="carousel-item">
-            <a href="{% url 'galery3alt' %}"><img class="d-block w-100 rounded border" src="{{v.imagen}}"
+            <a href="{% url 'galerymod' v.nombre %}"><img class="d-block w-100 rounded border" src="{{v.imagen}}"
                 alt="primera pantalla" height="698px" width="698px"></a>
             <div class="carousel-caption d-none d-md-block">
               <h5>{{v.nombre}}</h5>

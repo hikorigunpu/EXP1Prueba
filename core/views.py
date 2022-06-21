@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import obra
-from .forms import obraform
+from .forms import obraform, userform
 from django.views.generic import CreateView
 # Create your views here.
 
@@ -58,7 +58,15 @@ def home(request):
     return render(request, 'core/index.html')
 
 def loginnewuser(request):
-    return render(request, 'core/loginnewuser.html')
+    contexto = { 
+        'form': userform(),
+        }
+    if request.method=='POST':
+        formulario=userform(request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            contexto['mensaje']='Datos guardados correctamente'
+    return render(request, 'core/loginnewuser.html', contexto)
 
 def aboutus(request):
     return render(request, 'core/aboutus.html')
@@ -97,4 +105,11 @@ def aboutusalt(request):
 
 def formalt(request):
     return render(request, 'core/alt/form-notlog.html')
+
+def galerymod(request, nombre):
+    lista = obra.objects.get(nombre=nombre)
+    contexto = {
+        'obra': lista,
+    }
+    return render(request, 'core/galerymod.html', contexto)
 

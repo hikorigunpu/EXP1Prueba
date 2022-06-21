@@ -9,7 +9,7 @@ class tecnica(models.Model):
   def __str__(self):
     return self.nombretecnica
 
-# Modelo para vehiculo
+# Modelo para obra
 class obra(models.Model):
   idobra = models.IntegerField(primary_key = True, verbose_name = 'Id de obra')
   autor = models.CharField(max_length = 6, verbose_name = 'autor')
@@ -21,5 +21,12 @@ class obra(models.Model):
 
   def __str__(self):
     return self.idobra
+
+class user(models.Model):
+  username = models.CharField(primary_key = True,max_length = 20, verbose_name = 'nombre de user')
+  password = models.CharField(max_length = 10, verbose_name = 'contraseña de user')
+
+  def __str__(self):
+    return self.username
 
     
