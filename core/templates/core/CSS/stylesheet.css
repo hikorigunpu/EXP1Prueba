@@ -72,6 +72,10 @@ body
   height: 20%;
 }
 
+.fumo{
+  width: 20%;
+  height: auto;
+}
 .titulo{
   text-align: center;
   text-align: center; display: flex;

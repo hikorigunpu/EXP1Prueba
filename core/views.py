@@ -47,12 +47,21 @@ def form_del_obra(request, id):
 def login(request):
     return render(request, 'core/login.html')
 
+def css1(request):
+    return render(request, 'core/css/stylesheet.css')
+
 def index2(request):
     lista = obra.objects.all()
     contexto = {
         'obra': lista,
     }
     return render(request, 'core/index2.html', contexto)
+def index(request):
+    lista = obra.objects.all()
+    contexto = {
+        'obra': lista,
+    }
+    return render(request, 'core/index.html', contexto)
 
 def home(request):
     return render(request, 'core/index.html')
@@ -112,4 +121,7 @@ def galerymod(request, nombre):
         'obra': lista,
     }
     return render(request, 'core/galerymod.html', contexto)
+
+def allobras(request):
+    return render(request, 'core/allobras.html')
 
