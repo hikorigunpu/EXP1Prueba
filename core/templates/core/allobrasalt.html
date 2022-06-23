@@ -16,9 +16,7 @@
 <body>
     <!-- NavBar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="{% url 'index2' %}"><img
-        src="https://cdn.discordapp.com/attachments/967923311243841566/983892483631120434/unknown.png" alt="FotoLogo"
-        width="50px"></a>
+    <a class="navbar-brand" href="{% url 'home' %}"><img src=""><img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/twitter/322/snail_1f40c.png" alt="FotoLogo" width="50px"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -30,15 +28,13 @@
           <a class="nav-link" href="#">Grupo Cero<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'aboutus' %}">Más Sobre Nosotros</a>
+          <a class="nav-link" href="{% url 'aboutusalt' %}">Más Sobre Nosotros</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'allobras'%}">Trabajos de Nuestros Usuarios</a>
+          <a class="nav-link" href="{% url 'allobrasalt'%}">Trabajos de Nuestros Usuarios</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Carrito de Compra <img
-              src="https://cdn.discordapp.com/attachments/967923311243841566/982092126886195280/pngwing.com.png"
-              alt="carrito" width="25px"></a>
+          <a class="nav-link" href="#">Carrito de Compra <img src="https://cdn.discordapp.com/attachments/967923311243841566/982092126886195280/pngwing.com.png" alt="carrito" width="25px"></a>
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
@@ -56,82 +52,48 @@
             </div>
           </li>
         </ul>
-      
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
         <!-- NavBar Login -->
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            Bienvenido, {{ user }}!
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="{% url 'profile' %}">Editar info. personal</a>
-            <a class="dropdown-item" href="{% url 'form_obra' %}">Agregar Nueva Obra</a>
-            <a class="dropdown-item" href="{% url 'listadouser' %}">Ver mis Obras</a>
-            <a class="dropdown-item" href="#">Ver mis pedidos</a>
-            <a class="dropdown-item" href="#">Ayuda</a>
-          </div>
+        <div class="buttonLogin">
+          <a href="{% url 'login' %}"><button class="btn btn-secondary" type="button" id="LoginButton" aria-haspopup="true"
+              aria-expanded="false">
+              Iniciar Sesión
+            </button></a>
         </div>
-      </form>
     </div>
   </nav>
   <!-- NavBar -->
     <br>
     <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
     <hr>
-    <br>
-    <h1 class="text-center">Obras de Nuestros Usuarios</h1>
-    <br>
-    <h5 class="text-center">Nuestros usuarios son capaces de realizas las mejores obras,
-        <br>nuestro trabajo es darles la solucion para mostrarselas al mundo.  
-    </h5>
-    <br>
-    <hr>
-    <br>
-    <br>
-    {% csrf_token %}
-    <div class="row">
-        <table id="tabla" class="table" style="align-items: center; text-align: center;">
-            <thead>
-                <th></th>
-                <th>Autor</th>
-                <th>Nombre</th>
-                <th>Descripcion</th>
-                <th>Nombre de la Tecnica</th>
-                <th>Precio</th>
-                <th>Imagen</th>
-                <th></th>
-                </tr>
-            </thead>
-            <tbody>
 
-            </tbody>
-        </table>
-    </div>
-    <script>
-        $(document).ready(function () {
-            $.ajax({
-                type: "GET",
-                url: "{% url 'lista_obras' %}",
-                dataType: "json",
-                success: function (data) {
-                    $.each(data, function (i, item) {
-                        var row = "<tr>" +
-                            "<td>" + " " + "</td>" +
-                            "<td>" + item.autor + "</td>" +
-                            "<td>" + item.nombre + "</td>" +
-                            "<td>" + item.descripcion + "</td>" +
-                            "<td>" + item.nombretecnica + "</td>" +
-                            "<td>" + item.precio + "</td>" +
-                            "<td>" + "<img src =" + item.imagen + " width=150px height=150px>" + "</td>" +
-                            "<td>" + " " + "</td>" +
-                            "</tr>";
-                        $("#tabla>tbody").append(row);
-                    });
-                }, //End of AJAX Success function
-            });
-        });
-    </script>
+    <h1 class="text-center">Oops, Al parecer no has iniciado sesión...</h1>
+    <br>
+    <h3 class="text-center">Debes iniciar Sesión para visualizar este contenido</h3>
+    <br>
+    <a href="{% url 'login' %}"><h4 class="text-center">Inicia Sesión Aquí</h4></a>
+    <hr>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
     <br>
     <br>
     <footer class="text-white bg-dark mt-auto">
