@@ -15,7 +15,7 @@
 
 	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
-	<link rel="icon" type="image/x-icon" href="img/1f40c.png">
+	<link rel="icon" type="image/x-icon" href="https://cdn.discordapp.com/attachments/960931857086693396/983892424323629066/1f40c.png">
 	</head>
 
 	<script>
@@ -85,6 +85,7 @@
 	</script>
 
   <body class="d-flex flex-column min-vh-100">
+	{% load crispy_forms_tags %}
 	<br>
 	<br>
 	<br>
@@ -98,49 +99,22 @@
         		<br>
         		<br>
 				<div class="d-flex justify-content-center form_container">
-					<form id="loginForm" name="loginForm" action="login.html" method="post">
-						<div class="input-group mb-3">
-							<div class="input-group-append">
-								<span class="input-group-text"><i class="fas fa-user"></i></span>
-							</div>
-							<input type="email" name="email" class="form-control input_user" value="" placeholder="nombre de usuario" id="name" regexp="[A-Z]{0,1}[a-z]{0,9}">
-						</div>
-						<div class="input-group mb-3">
-							<div class="input-group-append">
-								<span class="input-group-text"><i class="fas fa-user"></i></span>
-							</div>
-							<input type="email" name="email" class="form-control input_user" value="" placeholder="correo electronico" id="email">
-						</div>
-						<div class="input-group mb-2">
-							<div class="input-group-append">
-								<span class="input-group-text"><i class="fas fa-key"></i></span>
-							</div>
-							<input type="password" name="password" class="form-control input_pass" value="" placeholder="contraseña" id="password" regexp="[a-z]{0,5}[1-9]{0,5}">
-						</div>
-						<div class="input-group mb-2">
-							<div class="input-group-append">
-								<span class="input-group-text"><i class="fas fa-key"></i></span>
-							</div>
-							<input type="password" name="password" class="form-control input_pass" value="" placeholder="repita su contraseña" id="password" regexp="[a-z]{0,5}[1-9]{0,5}">
-						</div>
-						<div class="form-group">
-							<div class="custom-control custom-checkbox">
-								<input type="checkbox" class="custom-control-input" id="customControlInline">
-								<label class="custom-control-label" for="customControlInline" style="color: white;">deseo recibir ofertas y noticias de Grupo Cero</label>
-							</div>
-							
-						</div>
-							<br>
-							<div class="g-recaptcha" data-sitekey="6LdtEA4gAAAAAJab-fM7MjwVbMQBowQYlHRLi5rd"></div>
-							<br>
-							<div class="d-flex justify-content-center mt-3 login_container border-color">
-								
-				 				<a href="{% url 'login' %}"><button type="submit" name="button" class="btn login_btn" onClick="enviar('index.html')" id="enviar">Inscribirse</button></a>
-					 
-				   			</div>
-						<br>
-						<br>
-					</form>
+					<div class="row">
+						{% block content %}
+						<form method="post" action="" id="formulario">
+						  {% csrf_token %}
+						  <div class="form-group">
+							{{form|crispy}}
+						  </div>
+						  <br>
+						  <input type="submit" class="btn btn-secondary" id="enviar" value="Ingresar">
+						  <br>
+						  <br>
+						  <div id="error" class="alert alert-danger">
+							{{mensaje}}
+						  </div>
+						</form>
+						{% endblock %}
 				</div>
 			</div>
 		</div>
