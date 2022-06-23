@@ -125,3 +125,6 @@ def galerymod(request, nombre):
 def allobras(request):
     return render(request, 'core/allobras.html')
 
+def allobrasalt(request):
+    return render(request, 'core/allobrasalt.html')
+
