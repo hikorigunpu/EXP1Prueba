@@ -1,5 +1,45 @@
 <html lang="en">
+    {%block js%}
+    <script>
+    function alerta1(id)
+    {
+        const swalWithBootstrapButtons = Swal.mixin({
+  customClass: {
+    confirmButton: 'btn btn-success',
+    cancelButton: 'btn btn-danger'
+  },
+  buttonsStyling: false
+})
 
+swalWithBootstrapButtons.fire({
+  title: '¿Estas seguro de eliminar la obra?',
+  text: "Una vez realizado no podras revertir este acto",
+  icon: 'warning',
+  showCancelButton: true,
+  confirmButtonText: 'Eliminar',
+  cancelButtonText: 'Cancelar',
+  reverseButtons: true
+}).then((result) => {
+  if (result.isConfirmed) {
+        window.location.href="/form-del-obra/"+id
+  } else if (
+    /* Read more about handling dismissals below */
+    result.dismiss === Swal.DismissReason.cancel
+  ) {
+    swalWithBootstrapButtons.fire(
+      'Cancelado',
+      'Tu obra de arte está a salvo',
+      'error'
+    )
+  }
+})
+    .then(function(result){
+      if(result.isConfirmed) 
+      window.location.href="/index2"
+    })
+    }
+    </script>
+    {%endblock%}
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -119,7 +159,7 @@
                     <td><img src="{{v.imagen}}" alt="foto de la obra" class="fotolistado" width="150px" height="150px">
                     </td>
                     <td><button class="btn"><a href="{% url 'form_mod_obra' v.idobra %}">Modificar</a></button></td>
-                    <td><button class="btn"><a href="{% url 'form_del_obra' v.idobra %}">Eliminar</a></button></td>
+                    <td><a class="btn btn-secundary" onclick="alerta1({{v.idobra}})" href="#">Eliminar</a></td>
                 </tr>
                 {% endfor %}
             </table>
@@ -165,6 +205,6 @@
             <p class="text-white-50 mb-0">Copyright © 2022 Grupo Cero</p>
         </div>
     </footer>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
-
 </html>
