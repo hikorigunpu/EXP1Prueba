@@ -28,16 +28,74 @@
             $("#foot").load('{% url "footer" %}');
         });
     </script>
+    <script>
+        $("#listacat").on('change', function () {
+        var cat = $("#listacat").val();
+        $('tr').show();
+
+        $("td.CA").each(function (index, tdCA) {
+            if ($(tdAR).hasClass("CA_" + cat)) {
+                $(tdAR).parent('tr').hide();
+            }
+        });
+    });
+    </script>
+
+
 </head>
 
 <body onload="onLoad()">
     <div id="nav-bar">
+        <br>
+        <br>
+    </div>
+    <div class="container">
+
+        <div class="nowrap form-inline">
+            <select id="listacat">
+                <option value="Afghanistan" name="cat">Afghanistan</option>
+                <option value="Turkmenistan" name="cat">Turkmenistan</option>
+                <option value="Bhakastan" name="cat">Bhakastan</option>
+            </select>
+        </div>
+
+        <table class="table table-striped" >
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Artista</th>
+                    <th scope="col">Obra</th>
+                    <th scope="col">Categoria</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Saul Goodpam</td>
+                    <td>Potato Contaiment</td>
+                    <td id="Td1" class="CA CA_Bhakastan">Afghanistan</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Juanito Profundo</td>
+                    <td>SCP</td>
+                    <td class="CA CA_Bhakastan">Bhakastan</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Bruh</td>
+                    <td>Silla</td>
+                    <td class="CA CA_Turkmenistan">Turkmenistan</td>
+                </tr>
+            </tbody>
+        </table>
+
+
     </div>
 
-
-
-   
-    <div id="foot"></div>
+    <br>
+    <br>
+    <div class="fixed-bottom" id="foot"></div>
 
 
 

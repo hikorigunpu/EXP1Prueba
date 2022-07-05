@@ -21,51 +21,51 @@
 </head>
 
 <script type="text/javascript">
-	document.addEventListener("DOMContentLoaded", function() {
-	document.getElementById("formulario").addEventListener('submit', validarFormulario); 
+	document.addEventListener("DOMContentLoaded", function () {
+		document.getElementById("formulario").addEventListener('submit', validarFormulario);
 	});
 
 	function validarFormulario(evento) {
-	evento.preventDefault();
-	var usuario = document.getElementById('usuario').value;
-	if(usuario.length == 0) {
-		alert('No has escrito nada en el usuario');
-		return;
-	}
-	var clave = document.getElementById('clave').value;
-	if (clave.length < 6) {
-		alert('La clave no es válida');
-		return;
-	}
-	this.submit();
+		evento.preventDefault();
+		var usuario = document.getElementById('usuario').value;
+		if (usuario.length == 0) {
+			alert('No has escrito nada en el usuario');
+			return;
+		}
+		var clave = document.getElementById('clave').value;
+		if (clave.length < 6) {
+			alert('La clave no es válida');
+			return;
+		}
+		this.submit();
 	}
 </script>
 
 <script>
-	$(document).ready(function () {
-		$("#loginForm").validate({
-			rules: {
-				email: {
-					required: true
+		$(document).ready(function () {
+			$("#loginForm").validate({
+				rules: {
+					email: {
+						required: true
+					},
+					password: {
+						required: true
+					}
 				},
-				password: {
-					required: true
-				}
-			},
-			messages: {
-				email: {
-					required: "especifique su email"
+				messages: {
+					email: {
+						required: "especifique su email"
+					},
+					password: {
+						required: "especifique su contraseña"
+					}
 				},
-				password: {
-					required: "especifique su contraseña"
+				submitHandler: function (form) { // for demo
+					alert('valid form');
+					return false;
 				}
-			},
-			submitHandler: function (form) { // for demo
-				alert('valid form');
-				return false;
-			}
+			});
 		});
-	});
 </script>
 <script type="text/javascript">
 	function enviar(pagina) {
@@ -142,7 +142,8 @@
 
 						<div class="d-flex justify-content-center mt-3 login_container border-color">
 
-							<a href="{% url 'index2' %}"><button type="button" name="button" value="entrar" class="btn login_btn">Iniciar sesion</button></a>
+							<a href="{% url 'index2' %}"><button type="button" name="button" value="entrar"
+									class="btn login_btn">Iniciar sesion</button></a>
 
 						</div>
 					</form>
@@ -150,7 +151,8 @@
 
 				<div class="mt-4">
 					<div class="d-flex justify-content-center links" style="color: white;">
-						No tiene cuenta?<a href="{% url 'loginnewuser' %}" class="ml-2" style="color: white;">Inscribirse</a>
+						No tiene cuenta?<a href="{% url 'loginnewuser' %}" class="ml-2"
+							style="color: white;">Inscribirse</a>
 					</div>
 					<div class="d-flex justify-content-center links">
 						<a href="#" style="color: white;">Olvidó su contraseña?</a>
