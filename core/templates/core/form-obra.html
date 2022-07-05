@@ -3,13 +3,8 @@
 
 <head>
   <meta charset="utf-8">
-  <script src={% static "1.js" %}> </script>
-  <script src={% static "1.js" %}> </script>
-  <script>
-    $(function(){
-      $("#nav-bar").load('{% url "navbarlog" %}');
-    });
-  </script>
+  
+
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
     integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -23,7 +18,13 @@
     integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
     crossorigin="anonymous"></script>
   <link rel="stylesheet" href="{% url 'css1' %}"">
-  <script src="//code.jquery.com/jquery.min.js"></script>
+  <script src=" //code.jquery.com/jquery.min.js"></script>
+  <script src={% static "1.js" %}> </script>
+  <script>
+    $(function () {
+      $("#nav-bar").load('{% url "navbarlog" %}');
+    });
+  </script>
   <title>formobra</title>
 </head>
 
@@ -105,6 +106,6 @@
       <p class="text-white-50 mb-0">Copyright © 2022 Grupo Cero</p>
     </div>
   </footer>
-  </body>
+</body>
 
 </html>
