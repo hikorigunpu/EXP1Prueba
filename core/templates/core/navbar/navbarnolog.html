@@ -1,0 +1,46 @@
+<!-- NavBar-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="{% url 'home' %}"><img src=""><img
+            src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/twitter/322/snail_1f40c.png"
+            alt="FotoLogo" width="50px"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Grupo Cero<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'aboutusalt' %}">Más Sobre Nosotros</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'allobrasalt'%}">Trabajos de Nuestros Usuarios</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Carrito de Compra <img
+                        src="https://cdn.discordapp.com/attachments/967923311243841566/982092126886195280/pngwing.com.png"
+                        alt="carrito" width="25px"></a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link " href="{% url 'filtro' %}" id="navbarfiltro" role="button">
+                        Filtro Arte
+                    </a>
+                </li>
+            </ul>
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <!-- NavBar Login -->
+            <div class="buttonLogin">
+                <a href="{% url 'login' %}"><button class="btn btn-secondary" type="button" id="LoginButton"
+                        aria-haspopup="true" aria-expanded="false">
+                        Iniciar Sesión
+                    </button></a>
+            </div>
+    </div>
+</nav>
+<!-- NavBar-->

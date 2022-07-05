@@ -46,6 +46,8 @@ def form_del_obra(request, id):
 
 def login(request):
     return render(request, 'core/login.html')
+def filtro(request):
+    return render(request, 'core/filtro.html')
 
 def css1(request):
     return render(request, 'core/css/stylesheet.css')
