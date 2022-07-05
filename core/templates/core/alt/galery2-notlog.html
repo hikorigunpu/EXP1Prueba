@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
 
@@ -5,64 +6,25 @@
   <!-- Etiquetas <meta> obligatorias para Bootstrap -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+  <script src=" //code.jquery.com/jquery.min.js"></script>
   <!-- Enlazando el CSS de Bootstrap -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
     integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <link rel="icon" type="image/x-icon"
     href="https://cdn.discordapp.com/attachments/960931857086693396/983892424323629066/1f40c.png">
+  <script>
+    $(function () {
+      $("#nav-bar").load('{% url "navbar" %}');
+    });
+  </script>
   <!-- CSS stylesheet-->
   <link rel="stylesheet" href="{% url 'css1' %}"">
   </head>
-  <body>
-    <nav class=" navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="{% url 'index' %}"><img src=""><img
-      src="https://cdn.discordapp.com/attachments/960931857086693396/983892424323629066/1f40c.png" alt="FotoLogo"
-      width="50px"></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Grupo Cero<span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'aboutus' %}"">Más Sobre Nosotros</a>
-          </li>
-          <li class=" nav-item">
-          <a class="nav-link" href="#">Carrito de Compra <img
-              src="https://cdn.discordapp.com/attachments/967923311243841566/982092126886195280/pngwing.com.png"
-              alt="carrito" width="25px"></a>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            Filtro Arte
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </li>
-      </ul>
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <!-- NavBar Login -->
-        <div class="buttonLogin">
-          <a href="{% url 'login' %}"><button class="btn btn-secondary" type="button" id="LoginButton" aria-haspopup="true"
-              aria-expanded="false">
-              Iniciar Sesión
-            </button></a>
-        </div>
-    </div>
-  </nav>
+  <body onload="onLoad()"> 
+  <!-- NavBar -->
+  <div id="nav-bar">
+  </div>
+  <!-- NavBar -->
   <br>
   <br>
   </form>
@@ -76,7 +38,8 @@
   <div class="container">
     <div class="row">
       <div class="col-md-4">
-        <img class="d-block w-100" src="https://scp-wiki.wikidot.com/local--files/scp-294/scp_294_by_staticfactory-d4xwn6e.jpg" alt="producto">
+        <img class="d-block w-100"
+          src="https://scp-wiki.wikidot.com/local--files/scp-294/scp_294_by_staticfactory-d4xwn6e.jpg" alt="producto">
       </div>
       <div class="col-md-8">
         <div class="card mb-4 box-shadow">
@@ -88,14 +51,23 @@
             <!-- nombre del autor de la obra-->
             <br>
             <h4>Special Containment Procedures:</h4>
-            <p class="card-text">There are no standard special containment procedures on file for Item SCP-294. However, only personnel of security clearance level 2 or higher are allowed to interact with it (see document SCP-294a). SCP-294 is currently being stored in the 2nd floor personnel break room and is monitored by two guards of security clearance level 3 at all times.</p>
+            <p class="card-text">There are no standard special containment procedures on file for Item SCP-294. However,
+              only personnel of security clearance level 2 or higher are allowed to interact with it (see document
+              SCP-294a). SCP-294 is currently being stored in the 2nd floor personnel break room and is monitored by two
+              guards of security clearance level 3 at all times.</p>
             <h4>Description:</h4>
             <p class="card-text">Item SCP-294 appears to be a standard coffee vending machine,
-               the only noticeable difference being an entry touchpad with buttons corresponding to an English QWERTY keyboard.
-                Upon depositing fifty cents US currency into the coin slot, the user is prompted to enter the name of any liquid using 
-                the touchpad. Upon doing so, a standard 12-ounce paper drinking cup is placed and the liquid indicated is poured. 
-                Ninety-seven initial test runs were performed (including requests for water, coffee, beer, and soda, non-consumable liquids such as sulfuric acid, wiper fluid, and motor oil, as well as substances that do not usually exist in liquid state, such as nitrogen, iron and glass) and each one returned a success. Test runs with solid materials such as diamond have failed,
-               however, as it appears that SCP-294 can only deliver substances that can exist in liquid state.</p>
+              the only noticeable difference being an entry touchpad with buttons corresponding to an English QWERTY
+              keyboard.
+              Upon depositing fifty cents US currency into the coin slot, the user is prompted to enter the name of any
+              liquid using
+              the touchpad. Upon doing so, a standard 12-ounce paper drinking cup is placed and the liquid indicated is
+              poured.
+              Ninety-seven initial test runs were performed (including requests for water, coffee, beer, and soda,
+              non-consumable liquids such as sulfuric acid, wiper fluid, and motor oil, as well as substances that do
+              not usually exist in liquid state, such as nitrogen, iron and glass) and each one returned a success. Test
+              runs with solid materials such as diamond have failed,
+              however, as it appears that SCP-294 can only deliver substances that can exist in liquid state.</p>
             <br>
             <h4>PRECIO: [REDACTED]</h4>
             <br>

@@ -1,0 +1,61 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="{% url 'index2' %}"><img
+        src="https://cdn.discordapp.com/attachments/967923311243841566/983892483631120434/unknown.png" alt="FotoLogo"
+        width="50px"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Grupo Cero<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'aboutus' %}">Más Sobre Nosotros</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'allobras'%}">Trabajos de Nuestros Usuarios</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Carrito de Compra <img
+              src="https://cdn.discordapp.com/attachments/967923311243841566/982092126886195280/pngwing.com.png"
+              alt="carrito" width="25px"></a>
+        </li>
+        <li class="nav-item">
+          <span class="elementor-icon-list-text nav-link">tu Ubicacion es:</span>
+        </li>
+        <li class="nav-item">
+          <div class="elementor-icon-list-text nav-link" id="location"></div>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item ">
+            <a class="nav-link " href="{% url 'filtro' %}" id="navbarfiltro" role="button">
+                Filtro Arte
+            </a>
+        </li>
+        </ul>
+      
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <!-- NavBar Login -->
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Bienvenido, {{ user }}!
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="{% url 'profile' %}">Editar info. personal</a>
+            <a class="dropdown-item" href="{% url 'form_obra' %}">Agregar Nueva Obra</a>
+            <a class="dropdown-item" href="{% url 'listadouser' %}">Ver mis Obras</a>
+            <a class="dropdown-item" href="#">Ver mis pedidos</a>
+            <a class="dropdown-item" href="#">Ayuda</a>
+            <a class="dropdown-item" href="{%url 'index'%}">Cerrar Sesión</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </nav>

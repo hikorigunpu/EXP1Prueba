@@ -46,12 +46,14 @@ def form_del_obra(request, id):
 
 def login(request):
     return render(request, 'core/login.html')
+def navbar(request):
+    return render(request, 'core/navbar/navbarnolog.html')
 def filtro(request):
     return render(request, 'core/filtro.html')
-
 def css1(request):
     return render(request, 'core/css/stylesheet.css')
-
+def navbarlog(request):
+    return render(request, 'core/navbar/navbarlog.html')
 def index2(request):
     lista = obra.objects.all()
     contexto = {

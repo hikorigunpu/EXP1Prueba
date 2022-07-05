@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
 
@@ -16,7 +17,11 @@
 
   <link rel="icon" type="image/x-icon"
     href="https://cdn.discordapp.com/attachments/960931857086693396/983892424323629066/1f40c.png">
-
+  <script>
+    $(function () {
+      $("#nav-bar").load('{% url "navbar" %}');
+    });
+  </script>
   <script type="text/javascript">
     $(document).ready(function () {
       $("#enviar").click(function () {
@@ -83,48 +88,11 @@
   </script>
 </head>
 
-<body class="d-flex flex-column min-vh-100">
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="{% url 'home' %}"><img src=""><img src="https://cdn.discordapp.com/attachments/960931857086693396/983892424323629066/1f40c.png"" alt="FotoLogo"
-        width="50px"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Grupo Cero<span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'aboutusalt' %}">Más Sobre Nosotros</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Carrito de Compra <img src="https://cdn.discordapp.com/attachments/967923311243841566/982092126886195280/pngwing.com.png" alt="carrito" width="25px"></a>
-        </li>
-      </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false">
-              Filtro Arte
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-          </li>
-        </ul>
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <!-- NavBar Login -->
-        <a href="{% url 'login' %}"><button type="button" id="dropdownMenu1" href="{% url 'login' %}"
-            class="btn btn-outline-secondary">Login <span class="caret"></span></button></a>
-    </div>
-  </nav>
+<body class="d-flex flex-column min-vh-100" onload="onLoad()">
+  <!-- NavBar -->
+  <div id="nav-bar">
+  </div>
+  <!-- NavBar -->
 
 
   <div class="container"> <a class="navbar-brand" href="{% url 'home' %}"><img src=""></a>
@@ -136,7 +104,8 @@
     <form id="form-cont">
       <div class="form-group">
         <label for="name" minlength="5">Nombre Completo:</label>
-        <input type="text" class="form-control" id="name" placeholder="Introduzca su Nombre" name="name" required minlength="5" maxlength="50" required pattern="[A-Za-z].{5,}">
+        <input type="text" class="form-control" id="name" placeholder="Introduzca su Nombre" name="name" required
+          minlength="5" maxlength="50" required pattern="[A-Za-z].{5,}">
         <span class="validity"></span>
       </div>
       <div class="form-group">
@@ -146,13 +115,14 @@
       </div>
       <div class="form-group">
         <label for="phone">Numero de telefono:</label>
-        <input type="tel" class="form-control" id="phone" placeholder="Introduzca su numero" name="phone"
-         required pattern="[0-9]{1,3}[0-9]{4}[0-9]{4}">
+        <input type="tel" class="form-control" id="phone" placeholder="Introduzca su numero" name="phone" required
+          pattern="[0-9]{1,3}[0-9]{4}[0-9]{4}">
         <span class="validity"></span>
       </div>
       <div class="form-group">
         <label for="name">Asunto:</label>
-        <input type="text" class="form-control" id="Asunto" placeholder="Asunto del Comunicado" name="asunto" required pattern="[A-Za-z].{3,}" spellcheck="true">
+        <input type="text" class="form-control" id="Asunto" placeholder="Asunto del Comunicado" name="asunto" required
+          pattern="[A-Za-z].{3,}" spellcheck="true">
         <span class="validity"></span>
       </div>
       <div class="form-group">

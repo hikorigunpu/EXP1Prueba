@@ -1,45 +1,45 @@
 <html lang="en">
-    {%block js%}
-    <script>
-    function alerta1(id)
-    {
+{%block js%}
+<script>
+    function alerta1(id) {
         const swalWithBootstrapButtons = Swal.mixin({
-  customClass: {
-    confirmButton: 'btn btn-success',
-    cancelButton: 'btn btn-danger'
-  },
-  buttonsStyling: false
-})
+            customClass: {
+                confirmButton: 'btn btn-success',
+                cancelButton: 'btn btn-danger'
+            },
+            buttonsStyling: false
+        })
 
-swalWithBootstrapButtons.fire({
-  title: '¿Estas seguro de eliminar la obra?',
-  text: "Una vez realizado no podras revertir este acto",
-  icon: 'warning',
-  showCancelButton: true,
-  confirmButtonText: 'Eliminar',
-  cancelButtonText: 'Cancelar',
-  reverseButtons: true
-}).then((result) => {
-  if (result.isConfirmed) {
-        window.location.href="/form-del-obra/"+id
-  } else if (
-    /* Read more about handling dismissals below */
-    result.dismiss === Swal.DismissReason.cancel
-  ) {
-    swalWithBootstrapButtons.fire(
-      'Cancelado',
-      'Tu obra de arte está a salvo',
-      'error'
-    )
-  }
-})
-    .then(function(result){
-      if(result.isConfirmed) 
-      window.location.href="/index2"
-    })
+        swalWithBootstrapButtons.fire({
+            title: '¿Estas seguro de eliminar la obra?',
+            text: "Una vez realizado no podras revertir este acto",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Eliminar',
+            cancelButtonText: 'Cancelar',
+            reverseButtons: true
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "/form-del-obra/" + id
+            } else if (
+                /* Read more about handling dismissals below */
+                result.dismiss === Swal.DismissReason.cancel
+            ) {
+                swalWithBootstrapButtons.fire(
+                    'Cancelado',
+                    'Tu obra de arte está a salvo',
+                    'error'
+                )
+            }
+        })
+            .then(function (result) {
+                if (result.isConfirmed)
+                    window.location.href = "/index2"
+            })
     }
-    </script>
-    {%endblock%}
+</script>
+{%endblock%}
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -58,68 +58,19 @@ swalWithBootstrapButtons.fire({
     <link rel="stylesheet" href="CSS/stylesheet.css">
     <link rel="icon" type="image/x-icon"
         href="https://cdn.discordapp.com/attachments/967923311243841566/983892483631120434/unknown.png">
+
+    <script>
+        $(function () {
+            $("#nav-bar").load('{% url "navbarlog" %}');
+        });
+    </script>
     <title>listado de obras</title>
 </head>
 
-<body>
+<body onload="onLoad()"> 
     <!-- NavBar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="{% url 'index2' %}"><img
-                src="https://cdn.discordapp.com/attachments/967923311243841566/983892483631120434/unknown.png"
-                alt="FotoLogo" width="50px"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Grupo Cero<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'aboutus' %}">Más Sobre Nosotros</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Carrito de Compra <img
-                            src="https://cdn.discordapp.com/attachments/967923311243841566/982092126886195280/pngwing.com.png"
-                            alt="carrito" width="25px"></a>
-                </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Filtro Arte
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </li>
-                </ul>
-
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <!-- NavBar Login -->
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Bienvenido, Usuario!
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="{% url 'profile' %}">Editar info. personal</a>
-                        <a class="dropdown-item" href="{% url 'form_obra' %}">Agregar Nueva Obra</a>
-                        <a class="dropdown-item" href="{% url 'listadouser' %}">Ver mis Obras</a>
-                        <a class="dropdown-item" href="#">Ver mis pedidos</a>
-                        <a class="dropdown-item" href="#">Ayuda</a>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </nav>
+    <div id="nav-bar">
+    </div>
     <!-- NavBar -->
     <br>
     <br>
@@ -207,4 +158,5 @@ swalWithBootstrapButtons.fire({
     </footer>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
+
 </html>
