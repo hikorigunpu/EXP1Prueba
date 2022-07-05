@@ -44,6 +44,9 @@ def form_del_obra(request, id):
     obra1.delete()
     return redirect(to="listadouser")
 
+    
+def footer(request):
+    return render(request, 'core/navbar/footer.html')
 def login(request):
     return render(request, 'core/login.html')
 def navbar(request):
