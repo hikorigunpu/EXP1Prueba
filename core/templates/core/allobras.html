@@ -67,10 +67,31 @@
     </div>
     <script>
         $(document).ready(function () {
+            var trok = 'Token ';
+            $.ajax({
+                type: "POST",
+                url: "{% url 'loginauth' %}",
+                dataType: "json",
+                async : false,
+                data: JSON.stringify({ "username": "{{user.username}}", "password": "django123" }),
+                success: function (response) {
+                    $("#tok").append(trok).append(response);
+                }, //End of AJAX Success function
+            });
+        });
+    </script>
+
+    <div id="tok"></div>
+
+    <script>
+        $(document).ready(function () {
+            var llave = document.getElementById('tok').value;
             $.ajax({
                 type: "GET",
                 url: "{% url 'lista_obras' %}",
                 dataType: "json",
+                async : false,
+                headers: { 'Authorization':$("#tok")},
                 success: function (data) {
                     $.each(data, function (i, item) {
                         var row = "<tr>" +

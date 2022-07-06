@@ -16,9 +16,8 @@
 
 	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
-	<link rel="icon" type="image/x-icon" href="https://cdn.discordapp.com/attachments/960931857086693396/983892424323629066/1f40c.png>
+	<link rel="icon" type="image/x-icon" href="https://cdn.discordapp.com/attachments/960931857086693396/983892424323629066/1f40c.png">
 </head>
-
 <body class="d-flex flex-column min-vh-100">
 	<br>
 	<br>
@@ -44,13 +43,17 @@
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
 							</div>
-							{{ form.username }}
+							<div id="usuario">
+								{{ form.username }}
+							</div>
 						</div>
 						<div class="input-group mb-2">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-key"></i></span>
 							</div>
-							{{ form.password }}
+							<div id="clave">
+								{{ form.password }}
+							</div>
 						</div>
 						<div class="form-group">
 							<div class="custom-control custom-checkbox">
