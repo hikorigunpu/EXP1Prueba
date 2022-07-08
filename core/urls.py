@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import allobrasalt ,allobras, css1 ,galerymod, form_del_obra, form_mod_obra, form_obra, index, listadouser,home, login, loginnewuser, index2, obrasform, profile, galery1, galery2, galery3, aboutus, form, formalt, galery1alt, galery2alt, galery3alt, aboutusalt
+from .views import allobrasalt ,allobras, css1, filtro, filtroalt, footerlog ,galerymod, form_del_obra, form_mod_obra, form_obra, index, listadouser,home, login, loginnewuser, index2, navbar, navbarlog, obrasform, profile, galery1, galery2, galery3, aboutus, form, formalt, galery1alt, galery2alt, galery3alt, aboutusalt,footer
 
 urlpatterns = [
     path('', home, name="home"),
@@ -15,11 +15,18 @@ urlpatterns = [
     path('obrasform', obrasform, name="obrasform"),
     path('profile', profile, name="profile"),
 
+    path('filtro', filtro, name="filtro"),
+    path('navbar', navbar, name="navbar"),
+    path('navbarlog', navbarlog, name="navbarlog"),
+    path('footer', footer, name="footer"),
+    path('filtroalt',filtroalt, name="filtroalt"),
+
     path('aboutusalt', aboutusalt, name="aboutusalt"),
     path('formalt', formalt, name="formalt"),
     path('galery1alt', galery1alt, name="galery1alt"),
     path('galery2alt', galery2alt, name="galery2alt"),
     path('galery3alt', galery3alt, name="galery3alt"),
+    path('footerlog', footerlog, name="footerlog"),
 
     path('form_obra', form_obra, name="form_obra"),
     path('form_mod_obra/<id>', form_mod_obra, name="form_mod_obra"),

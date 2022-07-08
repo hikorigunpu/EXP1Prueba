@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import obra
+from .models import obra, tecnica
 from .forms import obraform, userform
 from django.views.generic import CreateView
 # Create your views here.
@@ -44,25 +44,48 @@ def form_del_obra(request, id):
     obra1.delete()
     return redirect(to="listadouser")
 
+def filtroalt(request):
+    return render(request, 'core/alt/filtro-copy.html')
+def footer(request):
+    return render(request, 'core/navbar/footer.html')
 def login(request):
     return render(request, 'core/login.html')
-
+def navbar(request):
+    return render(request, 'core/navbar/navbarnolog.html')
+def filtro(request):
+    return render(request, 'core/filtro.html')
 def css1(request):
     return render(request, 'core/css/stylesheet.css')
-
+def navbarlog(request):
+    return render(request, 'core/navbar/navbarlog.html')
 def index2(request):
     lista = obra.objects.all()
     contexto = {
         'obra': lista,
     }
     return render(request, 'core/index2.html', contexto)
+
+def filtro(request):
+    lista = obra.objects.all()
+    contexto = {
+        'obra': lista
+    }
+    return render(request, 'core/filtro.html', contexto)
+def filtroalt(request):
+    lista = obra.objects.all()
+    contexto = {
+        'obra': lista
+    }
+    return render(request, 'core/alt/filtro-copy.html', contexto)
+
 def index(request):
     lista = obra.objects.all()
     contexto = {
         'obra': lista,
     }
     return render(request, 'core/index.html', contexto)
-
+def footerlog(request):
+    return render(request,'core/navbar/footerlog.html')
 def home(request):
     return render(request, 'core/index.html')
 
