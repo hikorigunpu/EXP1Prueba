@@ -71,6 +71,12 @@ def filtro(request):
         'obra': lista
     }
     return render(request, 'core/filtro.html', contexto)
+def filtroalt(request):
+    lista = obra.objects.all()
+    contexto = {
+        'obra': lista
+    }
+    return render(request, 'core/alt/filtro-copy.html', contexto)
 
 def index(request):
     lista = obra.objects.all()
@@ -78,7 +84,8 @@ def index(request):
         'obra': lista,
     }
     return render(request, 'core/index.html', contexto)
-
+def footerlog(request):
+    return render(request,'core/navbar/footerlog.html')
 def home(request):
     return render(request, 'core/index.html')
 

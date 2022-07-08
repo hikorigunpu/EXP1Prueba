@@ -19,7 +19,11 @@
       $("#nav-bar").load('{% url "navbarlog" %}');
     });
   </script>
-
+  <script>
+    $(function () {
+      $("#foot").load('{% url "footerlog" %}');
+    });
+  </script>
   <style>
     * {
       box-sizing: border-box;
@@ -298,6 +302,8 @@
       followCursor: true,
     });
   </script>
+  <br>
+  <div id="foot"></div>
 </body>
 
 </html>

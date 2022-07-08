@@ -18,8 +18,7 @@
     integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
     crossorigin="anonymous"></script>
   <link rel="stylesheet" href="{% url 'css1' %}"">
-  <script src=" //code.jquery.com/jquery.min.js">
-  </script>
+  <script src=" //code.jquery.com/jquery.min.js"></script>
   <script src={% static "1.js" %}> </script>
   <script>
     $(function () {
@@ -28,7 +27,7 @@
   </script>
   <script>
     $(function () {
-      $("#foot").load('{% url "footer" %}');
+      $("#foot").load('{% url "footerlog" %}');
     });
   </script>
   <title>formobra</title>
@@ -75,7 +74,6 @@
   <br>
   <br>
   <div id="foot"></div>
-
 </body>
 
 </html>

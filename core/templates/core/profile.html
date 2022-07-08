@@ -19,7 +19,11 @@
             $("#nav-bar").load('{% url "navbarlog" %}');
         });
     </script>
-
+    <script>
+    $(function () {
+      $("#foot").load('{% url "footerlog" %}');
+    });
+    </script>
 </head>
 
 <body class="d-flex flex-column min-vh-100" onload="onLoad()">
