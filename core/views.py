@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import obra
+from .models import obra, tecnica
 from .forms import obraform, userform
 from django.views.generic import CreateView
 # Create your views here.
@@ -44,7 +44,8 @@ def form_del_obra(request, id):
     obra1.delete()
     return redirect(to="listadouser")
 
-    
+def filtroalt(request):
+    return render(request, 'core/alt/filtro-copy.html')
 def footer(request):
     return render(request, 'core/navbar/footer.html')
 def login(request):
@@ -63,6 +64,14 @@ def index2(request):
         'obra': lista,
     }
     return render(request, 'core/index2.html', contexto)
+
+def filtro(request):
+    lista = obra.objects.all()
+    contexto = {
+        'obra': lista
+    }
+    return render(request, 'core/filtro.html', contexto)
+
 def index(request):
     lista = obra.objects.all()
     contexto = {
