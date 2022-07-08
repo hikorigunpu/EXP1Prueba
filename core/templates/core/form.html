@@ -22,6 +22,11 @@
     $(function () {
       $("#nav-bar").load('{% url "navbarlog" %}');
     });
+    $(document).ready(function () {
+      $("#enviar").click(function () {
+        alert("Su mensaje ha sido enviado. Se le dará respuesta lo antes posible por medio de correo electronico.");
+      });
+    });
   </script>
   <script>
     $(function () {
@@ -134,9 +139,10 @@
         <textarea class="form-control" maxlength="250" rows="3" cols="145" spellcheck="true" required></textarea>
         <span class="GFG">250</span>
       </div>
-
-      <a href="{% url 'index' %}"><button type="submit" class="btn btn-default btn-secondary submit" id="enviar"
-          value="submit">Enviar</button></a>
+      <div>
+          <button type="submit" class="btn btn-default btn-secondary submit" id="enviar"
+          value="submit">Enviar</button>
+      </div>
     </form>
   </div>
   <br>

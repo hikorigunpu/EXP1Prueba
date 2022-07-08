@@ -16,16 +16,23 @@
   <link rel="stylesheet" href="{% url 'css1' %}"">
   <script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js">
   </script>
+  <script src="//code.jquery.com/jquery.min.js"></script>
+  <script src={% static "1.js" %}> </script>
+  <script>
+    $(function () {
+      $("#nav-bar").load('{% url "navbar" %}');
+    });
 
+  </script>
+  <script>
+    $(function () {
+      $("#foot").load('{% url "footer" %}');
+    });
+  </script>
   <link rel="icon" type="image/x-icon"
     href="https://cdn.discordapp.com/attachments/960931857086693396/983892424323629066/1f40c.png">
 
   <script type="text/javascript">
-    $(document).ready(function () {
-      $("#enviar").click(function () {
-        alert("Su mensaje ha sido enviado. Se le dará respuesta lo antes posible por medio de correo electronico.");
-      });
-    });
 
     $(document).ready(function () {
       $("#form-cont").validate({
@@ -49,8 +56,8 @@
         }
       });
     });
-
   </script>
+
   <script type="text/javascript">
     $(document).ready(function () {
       var max_length = 250;
@@ -84,19 +91,6 @@
     // Arranca el validador al término de la carga del DOM
     $(document).ready(UXAPP.validador.init);
   </script>
-  <script src=" //code.jquery.com/jquery.min.js"></script>
-  <script src={% static "1.js" %}> </script>
-  <script>
-    $(function () {
-      $("#nav-bar").load('{% url "navbar" %}');
-    });
-  </script>
-  <script>
-    $(function () {
-      $("#foot").load('{% url "footer" %}');
-    });
-  </script>
-
 </head>
 
 <body class="d-flex flex-column min-vh-100" onload="onLoad()">
@@ -141,10 +135,9 @@
         <textarea class="form-control" maxlength="250" rows="3" cols="145" spellcheck="true" required></textarea>
         <span class="GFG">250</span>
       </div>
-      <br>
-
-      <a href="{% url 'home' %}"><button type="submit" class="btn btn-default btn-secondary submit" id="enviar"
-          value="submit">Enviar</button></a>
+      <div>
+        <button type="submit" class="btn btn-default btn-secondary submit" id="enviar" value="submit">Enviar</button>
+      </div>
     </form>
   </div>
   <br>
@@ -170,6 +163,7 @@
       followCursor: true,
     });
   </script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>
